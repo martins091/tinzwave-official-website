@@ -204,8 +204,7 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold mb-2">Office Location</h3>
                         <div className="text-sm text-muted-foreground space-y-1">
-                          <p>Cr8tivebox Co-Working Space</p>
-                          <p>E10 Adeniran Ogunsanya St</p>
+                          <p>E6 Adeniran Ogunsanya Shoprite Mall</p>
                           <p>Surulere, Lagos 100001</p>
                           <p>Nigeria</p>
                         </div>
