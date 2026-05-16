@@ -13,8 +13,7 @@ export default function AIPage() {
 
       <Navigation />
 
-        {/* HERO */}
-        {/* HERO */}
+  {/* HERO */}
 <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden px-6">
 
   {/* BACKGROUND IMAGE */}
@@ -75,16 +74,20 @@ export default function AIPage() {
     {/* CTA */}
     <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
 
-      <Button className="bg-[#03005F] hover:bg-[#03005F]/90 text-white px-8 py-6 text-sm shadow-lg shadow-[#03005F]/30">
-        Explore AI Systems
+      {/* FIRST BUTTON - Our AI Services */}
+      <Button asChild className="bg-[#03005F] hover:bg-[#03005F]/90 text-white px-8 py-6 text-sm shadow-lg shadow-[#03005F]/30">
+        <Link href="/ai/services">
+          Our AI Services
+        </Link>
       </Button>
 
+      {/* SECOND BUTTON - Join Our AI Community (WhatsApp link) */}
       <Button
         asChild
         className="border border-white/15 bg-white/5 text-white hover:bg-white/10 px-8 py-6 backdrop-blur-md"
       >
-        <Link href="/ai/academy">
-          Join AI Academy
+        <Link href="https://chat.whatsapp.com/FxMocmyegINCAUAvTjyhKT">
+          Join Our AI Community
         </Link>
       </Button>
 
@@ -214,7 +217,7 @@ export default function AIPage() {
 
       {/* CTA */}
       <Link
-        href="/ai/business"
+        href="/ai/ai-services"
         className="mt-8 inline-flex items-center font-medium text-[#03005F] relative z-10 group"
       >
         View Details
@@ -250,7 +253,7 @@ export default function AIPage() {
 
       {/* CTA */}
       <Link
-        href="/ai/academy"
+        href="/ai/ai-courses"
         className="mt-8 inline-flex items-center font-medium text-[#03005F] relative z-10 group"
       >
         View Details

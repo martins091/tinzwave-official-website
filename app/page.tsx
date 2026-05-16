@@ -146,7 +146,7 @@ export default function HomePage() {
                   className="bg-white text-black hover:bg-white/90 px-8 py-6 text-sm font-medium"
                 >
                   <Link href="/contact">
-                    Start a Project
+                    Explore our services
                   </Link>
                 </Button>
 
