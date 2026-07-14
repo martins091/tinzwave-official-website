@@ -1,18 +1,21 @@
-"use client"
+"use client";
 
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
-import { Card } from "@/components/ui/card"
-import { Camera, X } from "lucide-react"
-import { useState } from "react"
-import Image from "next/image"
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Camera, X, Sparkles, Zap, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import Image from "next/image";
+import Reveal from "@/components/Reveal";
 
 export default function GalleryPage() {
-  const [selectedImage, setSelectedImage] = useState<{ url: string; caption: string } | null>(null)
+  const [selectedImage, setSelectedImage] = useState<{ url: string; caption: string } | null>(null);
 
   const galleryImages = [
     {
       category: "Lectures & Training",
+      icon: "🎓",
       images: [
         {
           url: "/images/gallery-1.png",
@@ -42,6 +45,7 @@ export default function GalleryPage() {
     },
     {
       category: "Certificate Collections",
+      icon: "🏆",
       images: [
         {
           url: "/images/gallery-7.png",
@@ -71,6 +75,7 @@ export default function GalleryPage() {
     },
     {
       category: "Classroom Activities",
+      icon: "💻",
       images: [
         {
           url: "/images/gallery-3.png",
@@ -100,6 +105,7 @@ export default function GalleryPage() {
     },
     {
       category: "Community",
+      icon: "🤝",
       images: [
         {
           url: "/gallery1.jpeg",
@@ -127,85 +133,180 @@ export default function GalleryPage() {
         },
       ],
     },
-  ]
+  ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black text-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="bg-primary text-primary-foreground py-20">
-        <div className="container mx-auto px-4">
+      {/* ========== HERO - Premium 2038 Style ========== */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#03005F]/40 via-black to-black" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#03005F]/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <Camera className="h-16 w-16 mx-auto mb-6 text-secondary" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Gallery</h1>
-            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed">
-              Explore our training sessions, lectures, certificate collections, and classroom activities. See what we've
-              been building and who we've been empowering.
+            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl mb-8">
+              <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-lg shadow-white/20" />
+              <span className="text-white/80 font-mono text-xs tracking-[0.2em]">
+                ⚡ OUR GALLERY
+              </span>
+              <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-lg shadow-white/20" />
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
+              <span className="text-white">Our</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#03005F] via-indigo-400 to-purple-400 animate-gradient">
+                Gallery
+              </span>
+            </h1>
+            
+            <p className="mt-6 text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl mx-auto">
+              Explore our training sessions, lectures, certificate collections, and classroom activities.
+              See what we've been building and who we've been empowering.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Gallery Sections */}
+      {/* ========== GALLERY SECTIONS ========== */}
       {galleryImages.map((section, sectionIndex) => (
-        <section key={sectionIndex} className={`py-16 md:py-24 ${sectionIndex % 2 === 1 ? "bg-muted/30" : ""}`}>
+        <section
+          key={sectionIndex}
+          className={`py-20 ${sectionIndex % 2 === 0 ? "bg-black" : "bg-gradient-to-b from-black via-white/5 to-black"}`}
+        >
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-primary text-center">{section.category}</h2>
+            <Reveal>
+              <div className="text-center mb-16">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <span className="text-3xl">{section.icon}</span>
+                  <Badge className="border border-white/20 bg-white/5 text-white/80 font-mono text-xs tracking-widest">
+                    SECTION {sectionIndex + 1}
+                  </Badge>
+                </div>
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                  {section.category}
+                </h2>
+                <div className="w-20 h-1 bg-gradient-to-r from-[#03005F] to-indigo-400 mx-auto rounded-full" />
+              </div>
+            </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {section.images.map((image, imageIndex) => (
-                <Card
-                  key={imageIndex}
-                  className="overflow-hidden cursor-pointer transition-all hover:shadow-xl hover:scale-105"
-                  onClick={() => setSelectedImage(image)}
-                >
-                  <div className="relative aspect-video">
-                    <Image
-                      src={image.url || "/placeholder.svg"}
-                      alt={image.caption}
-                      fill
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+                <Reveal key={imageIndex}>
+                  <div
+                    className="group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-white/10"
+                    onClick={() => setSelectedImage(image)}
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-b from-[#03005F]/20 to-black/80">
+                      <Image
+                        src={image.url || "/placeholder.svg"}
+                        alt={image.caption}
+                        fill
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      
+                      {/* Hover overlay with caption */}
+                      <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                        <div className="w-full">
+                          <p className="text-white text-sm font-medium line-clamp-2">
+                            {image.caption}
+                          </p>
+                          <div className="flex items-center gap-2 mt-2 text-white/40 text-xs font-mono">
+                            <span>View</span>
+                            <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Image counter badge */}
+                    <div className="absolute top-3 right-3 px-2 py-1 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl text-[10px] text-white/40 font-mono">
+                      {imageIndex + 1}/{section.images.length}
+                    </div>
                   </div>
-                  <div className="p-4">
-                    <p className="text-sm font-medium text-muted-foreground">{image.caption}</p>
-                  </div>
-                </Card>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
       ))}
 
-      {/* Lightbox Modal */}
+      {/* ========== LIGHTBOX MODAL - Premium 2038 ========== */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 backdrop-blur-xl"
           onClick={() => setSelectedImage(null)}
         >
+          {/* Close button */}
           <button
-            className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            className="absolute top-6 right-6 p-3 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110"
             onClick={() => setSelectedImage(null)}
             aria-label="Close"
           >
             <X className="h-6 w-6 text-white" />
           </button>
+
+          {/* Image counter */}
+          <div className="absolute top-6 left-6 px-4 py-2 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl text-xs text-white/40 font-mono">
+            Gallery View
+          </div>
+
           <div className="max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
-            <Image
-              src={selectedImage.url || "/placeholder.svg"}
-              alt={selectedImage.caption}
-              width={1200}
-              height={800}
-              className="w-full h-auto rounded-lg"
-            />
-            <p className="text-white text-center mt-4 text-lg">{selectedImage.caption}</p>
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#03005F]/20">
+              <Image
+                src={selectedImage.url || "/placeholder.svg"}
+                alt={selectedImage.caption}
+                width={1200}
+                height={800}
+                className="w-full h-auto max-h-[80vh] object-contain"
+              />
+              
+              {/* Caption overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                <div className="flex items-center gap-3">
+                  <div className="w-1 h-8 bg-gradient-to-b from-[#03005F] to-indigo-400 rounded-full" />
+                  <p className="text-white text-lg font-medium">{selectedImage.caption}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation hint */}
+            <div className="text-center mt-4">
+              <p className="text-xs text-white/20 font-mono tracking-wider">
+                Click outside to close · ESC to exit
+              </p>
+            </div>
           </div>
         </div>
       )}
 
       <Footer />
+
+      <style jsx global>{`
+        @keyframes gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 4s ease infinite;
+        }
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      `}</style>
     </div>
-  )
+  );
 }

@@ -1,3 +1,5 @@
+// lib/courses-data.js
+
 export interface Course {
   id: string
   title: string
@@ -22,7 +24,7 @@ export const courses: Course[] = [
     category: "Web Development",
     duration: "2 months",
     price: "₦100,000",
-    blackFridayPrice: "₦80,000",
+    blackFridayPrice: "₦100,000",
     description: "Master modern frontend development with HTML, CSS, JavaScript, and React",
     overview:
       "Learn to build beautiful, responsive, and interactive user interfaces using the latest frontend technologies. This course covers everything from HTML/CSS fundamentals to advanced React concepts.",
@@ -52,7 +54,7 @@ export const courses: Course[] = [
     category: "Web Development",
     duration: "2 months",
     price: "₦100,000",
-    blackFridayPrice: "₦80,000",
+    blackFridayPrice: "₦100,000",
     description: "Build robust server-side applications with Node.js, Express.js, and APIs",
     overview:
       "Master backend development and learn to build scalable server applications, RESTful APIs, and manage databases. Perfect for those who want to handle the server side of web applications.",
@@ -82,7 +84,7 @@ export const courses: Course[] = [
     category: "Web Development",
     duration: "4 months",
     price: "₦200,000",
-    blackFridayPrice: "₦160,000",
+    blackFridayPrice: "₦200,000",
     description: "Complete frontend and backend development with APIs and databases",
     overview:
       "Become a complete fullstack developer by mastering both frontend and backend technologies. Build complete web applications from scratch with React, Node.js, databases, and APIs.",
@@ -112,7 +114,7 @@ export const courses: Course[] = [
     category: "Design",
     duration: "2 months",
     price: "₦100,000",
-    blackFridayPrice: "₦80,000",
+    blackFridayPrice: "₦100,000",
     description: "Design beautiful interfaces using Figma, wireframing, and prototyping",
     overview:
       "Learn to design user-centered digital experiences that are both beautiful and functional. Master industry-standard design tools and methodologies used by top tech companies.",
@@ -142,7 +144,7 @@ export const courses: Course[] = [
     category: "Management",
     duration: "2 months",
     price: "₦100,000",
-    blackFridayPrice: "₦80,000",
+    blackFridayPrice: "₦100,000",
     description: "Master product lifecycle, user personas, and strategy",
     overview:
       "Learn to manage products from conception to launch. Understand user needs, define product strategy, work with development teams, and drive product success.",
@@ -172,7 +174,7 @@ export const courses: Course[] = [
     category: "Management",
     duration: "2 months",
     price: "₦100,000",
-    blackFridayPrice: "₦80,000",
+    blackFridayPrice: "₦100,000",
     description: "Learn Agile, Scrum, and master tools like Jira and Trello",
     overview:
       "Master the art of project management using Agile and Scrum methodologies. Learn to plan, execute, and deliver projects on time and within budget.",
@@ -197,7 +199,7 @@ export const courses: Course[] = [
     category: "Marketing",
     duration: "2 months",
     price: "₦100,000",
-    blackFridayPrice: "₦80,000",
+    blackFridayPrice: "₦100,000",
     description: "Master SEO, content marketing, ads, and analytics",
     overview:
       "Learn to create and execute effective digital marketing campaigns that drive results. Master SEO, social media, content marketing, and paid advertising.",
@@ -221,13 +223,43 @@ export const courses: Course[] = [
     mode: ["Physical", "Virtual"],
   },
   {
+    id: "8",
+    title: "Full AI Mastery Program",
+    slug: "full-ai-mastery",
+    category: "Artificial Intelligence",
+    duration: "4 months",
+    price: "₦200,000",
+    blackFridayPrice: "₦200,000",
+    description: "Complete mastery of artificial intelligence — from foundations to advanced neural networks",
+    overview:
+      "Dive deep into artificial intelligence and become an AI expert. This comprehensive program covers everything from the fundamentals to advanced neural network architectures and real-world applications.",
+    whatYouLearn: [
+      "Machine learning fundamentals",
+      "Deep learning with TensorFlow and PyTorch",
+      "Natural Language Processing (NLP)",
+      "Computer vision and image recognition",
+      "Generative AI and LLMs",
+      "Model deployment and MLOps",
+      "AI ethics and responsible AI",
+      "Real-world AI projects and case studies",
+    ],
+    tools: ["Python", "TensorFlow", "PyTorch", "Keras", "Jupyter Notebook", "Google Colab", "Docker", "AWS"],
+    whoShouldEnroll: [
+      "Software developers wanting to specialize in AI",
+      "Data scientists",
+      "Tech professionals wanting AI skills",
+      "Students interested in AI careers",
+    ],
+    mode: ["Physical", "Virtual"],
+  },
+  {
     id: "9",
     title: "AI Engineering",
     slug: "ai-engineering",
     category: "Artificial Intelligence",
     duration: "3 months",
-    price: "₦300,000",
-    blackFridayPrice: "₦240,000",
+    price: "₦100,000",
+    blackFridayPrice: "₦100,000",
     description: "Master neural networks, NLP, computer vision, and AI deployment",
     overview:
       "Dive deep into artificial intelligence and machine learning. Learn to build intelligent systems using neural networks, natural language processing, and computer vision.",
@@ -257,7 +289,7 @@ export const courses: Course[] = [
     category: "Software Engineering",
     duration: "3 months",
     price: "₦200,000",
-    blackFridayPrice: "₦160,000",
+    blackFridayPrice: "₦200,000",
     description: "Advanced software architectures and microservices",
     overview:
       "Master advanced software engineering concepts and build enterprise-grade applications. Learn system design, microservices, DevOps, and industry best practices.",
@@ -281,13 +313,46 @@ export const courses: Course[] = [
     mode: ["Physical", "Virtual"],
   },
   {
+    id: "11",
+    title: "Data Science Bootcamp",
+    slug: "data-science-bootcamp",
+    category: "Data Science",
+    duration: "4 months",
+    price: "₦400,000",
+    blackFridayPrice: "₦400,000",
+    description: "Become a data scientist with comprehensive training in statistics, Python, machine learning, and data visualization",
+    overview:
+      "Transform into a professional data scientist with this comprehensive bootcamp. Master statistics, Python programming, machine learning algorithms, and data visualization to make data-driven decisions.",
+    whatYouLearn: [
+      "Python for data science",
+      "Statistical analysis and probability",
+      "Data cleaning and preprocessing",
+      "Exploratory data analysis",
+      "Machine learning algorithms",
+      "Deep learning fundamentals",
+      "Data visualization with Matplotlib, Seaborn, and Plotly",
+      "Big data technologies",
+      "Real-world data science projects",
+      "Data storytelling and presentation",
+    ],
+    tools: ["Python", "Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Jupyter Notebook", "Tableau", "Power BI", "SQL"],
+    whoShouldEnroll: [
+      "Aspiring data scientists",
+      "Analysts wanting to level up",
+      "Software developers transitioning to data science",
+      "Business professionals wanting data skills",
+      "Students interested in data careers",
+    ],
+    mode: ["Physical", "Virtual"],
+  },
+  {
     id: "12",
     title: "Data Analysis",
     slug: "data-analysis",
     category: "Data Science",
     duration: "2 months",
-    price: "₦200,000",
-    blackFridayPrice: "₦160,000",
+    price: "₦100,000",
+    blackFridayPrice: "₦100,000",
     description: "Master Excel, SQL, Power BI, and create insightful dashboards",
     overview:
       "Learn to analyze data and create meaningful insights using industry-standard tools. Perfect for those who want to make data-driven decisions.",
