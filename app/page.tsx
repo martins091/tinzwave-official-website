@@ -80,7 +80,7 @@ export default function HomePage() {
       title: "Tinzwave AI Academy",
       description:
         "High-quality practical training in AI Engineering, Fullstack Web (MERN), Mobile Development, and Digital Marketing. Bootcamps, professional courses, workshops, and corporate training.",
-      href: "/academy",
+      href: "/courses",
       gradient: "from-rose-500 to-pink-500",
       badge: "Training Hub",
       features: ["Bootcamps", "Professional Courses", "Corporate Training", "Workshops"],
@@ -207,10 +207,10 @@ export default function HomePage() {
                       size="lg"
                       className="relative px-8 py-6 text-sm font-medium bg-gradient-to-r from-[#03005F] to-indigo-600 text-white hover:shadow-2xl hover:shadow-[#03005F]/40 transition-all duration-300 overflow-hidden group rounded-xl"
                     >
-                      <Link href="/contact">
+                      <Link href="/services" className="flex items-center gap-3">
                         <span className="relative z-10 flex items-center gap-3">
-                          <Sparkles className="w-4 h-4" />
-                          Explore Ecosystem
+                         
+                          Explore Services
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition" />
                         </span>
                         <div className="absolute inset-0 bg-gradient-to-r from-[#03005F] to-purple-700 opacity-0 group-hover:opacity-100 transition" />
@@ -222,9 +222,9 @@ export default function HomePage() {
                       size="lg"
                       className="px-8 py-6 text-sm font-medium border border-white/10 bg-white/5 text-white hover:bg-white/10 backdrop-blur-xl transition-all duration-300 rounded-xl group"
                     >
-                      <Link href="/academy">
+                      <Link href="/courses">
                         <GraduationCap className="w-4 h-4 mr-3 group-hover:scale-110 transition" />
-                        Join Academy 2026
+                        Join Next Cohort
                       </Link>
                     </Button>
                   </div>
@@ -332,8 +332,8 @@ export default function HomePage() {
         // Image paths - replace with your actual image names
         const imageMap = {
           "Tinzwave AI Academy": "/gallery4.jpeg",
-          "Tinzwave Labs": "/ai-technology-blog.jpg",
-          "Tinzwave Workspace": "/group.jpeg",
+          "Tinzwave Labs": "/coding.jpg",
+          "Tinzwave Workspace": "/workspace2.png",
         };
         const imageSrc = imageMap[item.title] || "/placeholder-image.png";
 

@@ -45,7 +45,7 @@ import Reveal from "@/components/Reveal";
 export default function ServicesPage() {
   const ecosystemData = [
     {
-      id: "academy",
+      id: "courses",
       icon: GraduationCap,
       title: "Tinzwave AI Academy",
       badge: "Training Hub",

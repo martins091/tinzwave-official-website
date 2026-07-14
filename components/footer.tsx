@@ -119,12 +119,12 @@ export function Footer() {
 
             <div className="flex gap-3 mt-5">
               {[
-                { icon: Facebook, href: "#" },
-                { icon: Twitter, href: "#" },
-                { icon: Instagram, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Github, href: "#" },
-                { icon: Youtube, href: "#" },
+                { icon: Facebook, href: "https://web.facebook.com/profile.php?id=61579452654180" },
+                { icon: Twitter, href: "https://twitter.com/tinzwave" },
+                { icon: Instagram, href: "https://instagram.com/tinzwave" },
+                { icon: Linkedin, href: "https://linkedin.com/company/tinzwave" },
+                { icon: Github, href: "https://github.com/tinzwave" },
+               
               ].map((social, i) => {
                 const Icon = social.icon;
                 return (
