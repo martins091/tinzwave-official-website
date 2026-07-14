@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Brain,
   Cpu,
@@ -222,22 +223,30 @@ export default function LabsPage() {
     <div className="min-h-screen bg-black text-white">
       <Navigation />
 
-      {/* ========== HERO - Premium 2038 Style ========== */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#03005F]/40 via-black to-black" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#03005F]/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      {/* ========== HERO - Full Width Image Background ========== */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/coding.png"
+            alt="Tinzwave Innovation Labs"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+        </div>
         
         {/* Orbital Rings */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#03005F]/20 w-[500px] h-[500px] animate-[spin_25s_linear_infinite]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-indigo-500/15 w-[700px] h-[700px] animate-[spin_30s_linear_infinite_reverse]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-500/10 w-[900px] h-[900px] animate-[spin_35s_linear_infinite]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 w-[500px] h-[500px] animate-[spin_25s_linear_infinite]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5 w-[700px] h-[700px] animate-[spin_30s_linear_infinite_reverse]" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl mb-8">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/20 bg-black/50 backdrop-blur-xl mb-8">
               <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-lg shadow-white/20" />
               <span className="text-white/80 font-mono text-xs tracking-[0.2em]">
                 ⚡ TINZWAVE LABS
@@ -247,17 +256,17 @@ export default function LabsPage() {
             
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
               <span className="text-white">Tinzwave</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#03005F] via-indigo-400 to-purple-400 animate-gradient">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-300 to-purple-300 animate-gradient">
                 Innovation Labs
               </span>
             </h1>
             
-            <p className="mt-6 text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-6 text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl">
               We design, build, and deploy cutting-edge AI solutions, software applications,
               and business systems that transform organizations and drive growth.
             </p>
             
-            <div className="flex flex-wrap gap-4 justify-center mt-10">
+            <div className="flex flex-wrap gap-4 mt-10">
               <Button
                 asChild
                 className="relative px-8 py-6 text-sm font-bold bg-gradient-to-r from-[#03005F] via-indigo-600 to-[#03005F] text-white hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-500 overflow-hidden group rounded-xl shadow-lg shadow-indigo-500/10"
@@ -272,7 +281,7 @@ export default function LabsPage() {
               </Button>
               <Button
                 asChild
-                className="px-8 py-6 text-sm font-medium border-2 border-white/10 bg-transparent text-white hover:bg-white/5 hover:border-white/30 backdrop-blur-xl transition-all duration-500 rounded-xl"
+                className="px-8 py-6 text-sm font-medium border-2 border-white/20 bg-black/30 backdrop-blur-xl text-white hover:bg-white/10 hover:border-white/40 transition-all duration-500 rounded-xl"
               >
                 <Link href="#ai">
                   Explore Capabilities
@@ -421,6 +430,61 @@ export default function LabsPage() {
         </div>
       </section>
 
+      {/* ========== BUSINESS SOLUTIONS ========== */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 border border-purple-500/30 bg-purple-500/10 text-purple-400 font-mono text-xs tracking-widest">
+              BUSINESS SOLUTIONS
+            </Badge>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              Enterprise Business Solutions
+            </h2>
+            <p className="text-white/40 text-lg max-w-2xl mx-auto">
+              Comprehensive solutions that optimize operations, drive growth, and transform your business.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {businessSolutions.map((solution, index) => {
+              const Icon = solution.icon;
+              return (
+                <Reveal key={index}>
+                  <div className="group relative p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10 h-full">
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition duration-500" />
+                    
+                    <div className="relative flex flex-col h-full">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-lg shadow-purple-500/20">
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      
+                      <h3 className="text-lg font-bold text-white mb-2">
+                        {solution.title}
+                      </h3>
+                      
+                      <p className="text-sm text-white/50 leading-relaxed flex-1">
+                        {solution.description}
+                      </p>
+                      
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {solution.features.map((feature, idx) => (
+                          <span
+                            key={idx}
+                            className="px-2 py-1 rounded-full border border-white/5 bg-white/5 text-[10px] text-white/30 font-mono"
+                          >
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ========== TECHNOLOGY STACK ========== */}
       <section className="py-20 bg-gradient-to-b from-black via-white/5 to-black">
         <div className="container mx-auto px-4">
@@ -506,6 +570,7 @@ export default function LabsPage() {
         </div>
       </section>
 
+  
       <Footer />
 
       <style jsx global>{`

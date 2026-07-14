@@ -332,7 +332,7 @@ export default function HomePage() {
         // Image paths - replace with your actual image names
         const imageMap = {
           "Tinzwave AI Academy": "/gallery4.jpeg",
-          "Tinzwave Labs": "/coding.jpg",
+          "Tinzwave Labs": "/coding.png",
           "Tinzwave Workspace": "/workspace2.png",
         };
         const imageSrc = imageMap[item.title] || "/placeholder-image.png";

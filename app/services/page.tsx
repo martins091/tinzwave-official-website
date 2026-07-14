@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Brain,
   Globe,
@@ -209,15 +210,30 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-black text-white">
       <Navigation />
 
-      {/* ========== HERO - Premium 2038 Style ========== */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#03005F]/40 via-black to-black" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#03005F]/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      {/* ========== HERO - Full Width Image Background ========== */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/coding.png"
+            alt="Tinzwave Services"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+        </div>
+        
+        {/* Floating particles */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 w-[500px] h-[500px] animate-[spin_25s_linear_infinite]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5 w-[700px] h-[700px] animate-[spin_30s_linear_infinite_reverse]" />
+        </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl mb-8">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/20 bg-black/50 backdrop-blur-xl mb-8">
               <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-lg shadow-white/20" />
               <span className="text-white/80 font-mono text-xs tracking-[0.2em]">
                 ⚡ OUR SERVICES
@@ -227,12 +243,12 @@ export default function ServicesPage() {
             
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
               <span className="text-white">Our</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#03005F] via-indigo-400 to-purple-400 animate-gradient">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-300 to-purple-300 animate-gradient">
                 Ecosystem Services
               </span>
             </h1>
             
-            <p className="mt-6 text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-6 text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl">
               Comprehensive technology solutions across our three divisions —
               Academy, Labs, and Workspace — designed to transform your business,
               institution, or career.
@@ -348,6 +364,10 @@ export default function ServicesPage() {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
+        }
+        @keyframes spin {
+          from { transform: translate(-50%, -50%) rotate(0deg); }
+          to { transform: translate(-50%, -50%) rotate(360deg); }
         }
         .animate-gradient {
           background-size: 200% 200%;
