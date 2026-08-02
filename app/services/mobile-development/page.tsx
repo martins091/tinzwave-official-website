@@ -4,6 +4,13 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Smartphone, CheckCircle2, Users } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Mobile App Development | Tinzwave",
+  description:
+    "Native and cross-platform mobile app development with React Native, Swift, and Kotlin from Tinzwave Labs.",
+}
 
 export default function MobileDevelopmentPage() {
   const appTypes = [

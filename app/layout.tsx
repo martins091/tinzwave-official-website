@@ -1,7 +1,8 @@
 import type React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import Chatbot from "@/components/Chatbot";
 import "./globals.css";
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -42,12 +43,6 @@ export const metadata: Metadata = {
     images: ["https://tinzwave.com/og-image.jpg"],
     creator: "@tinzwave",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
   icons: {
     icon: [
       {
@@ -62,6 +57,13 @@ export const metadata: Metadata = {
     apple: "/tinzwave-icon.png",
   },
   generator: "v0.app",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export default function RootLayout({
@@ -110,6 +112,7 @@ export default function RootLayout({
       </head>
       <body className={`font-sans antialiased`}>
         {children}
+        <Chatbot />
         <Analytics />
       </body>
     </html>

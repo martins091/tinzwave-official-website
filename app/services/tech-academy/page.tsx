@@ -4,6 +4,13 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tech Academy Training | Tinzwave",
+  description:
+    "Practical training programs in AI, software development, and digital skills for individuals, teams, and institutions.",
+};
 
 export default function TechAcademyPage() {
   return (

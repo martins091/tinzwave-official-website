@@ -4,6 +4,13 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AI Automation Services | Tinzwave",
+  description:
+    "AI-powered chatbots, RAG systems, and business process automation built by Tinzwave Labs to transform your operations.",
+};
 
 export default function AIAutomationsPage() {
   return (

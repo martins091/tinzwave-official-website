@@ -4,6 +4,13 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { TrendingUp, CheckCircle2, Users } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Digital Marketing Services | Tinzwave",
+  description:
+    "SEO, social media, content marketing, and paid ads services from Tinzwave to grow your brand's visibility and results.",
+}
 
 export default function DigitalMarketingPage() {
   const services = [

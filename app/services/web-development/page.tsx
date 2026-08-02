@@ -4,6 +4,13 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Globe, CheckCircle2, Users } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Web Development Services | Tinzwave",
+  description:
+    "Modern, responsive web applications built with React, Next.js, and TypeScript by Tinzwave Labs.",
+}
 
 export default function WebDevelopmentPage() {
   const features = [

@@ -6,11 +6,31 @@ import Link from "next/link";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { blogPosts } from "@/lib/blog-data";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({
     slug: post.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string | string[] } | Promise<{ slug: string | string[] }>;
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const slug = Array.isArray(resolvedParams.slug) ? resolvedParams.slug[0] : resolvedParams.slug;
+  const post = blogPosts.find((p) => p.slug === slug);
+
+  if (!post) {
+    return { title: "Post Not Found | Tinzwave Blog" };
+  }
+
+  return {
+    title: `${post.title} | Tinzwave Blog`,
+    description: post.excerpt,
+  };
 }
 
 export default async function BlogPostPage({

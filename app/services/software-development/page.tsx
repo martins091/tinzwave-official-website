@@ -4,6 +4,13 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Brain, CheckCircle2, Users } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Custom Software Development | Tinzwave",
+  description:
+    "Scalable enterprise software and MVP development for startups and businesses, built by Tinzwave Labs.",
+}
 
 export default function SoftwareDevelopmentPage() {
   const features = [
