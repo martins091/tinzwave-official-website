@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Sparkles, Send, GraduationCap } from "lucide-react";
+import { Menu, X, Sparkles, Send, GraduationCap, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+
+const AI_INTERVIEWER_URL = "https://interviewai.tinzwave.com/";
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -59,6 +61,21 @@ export function Navigation() {
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-[#03005F] to-indigo-500 group-hover:w-full transition-all duration-500 shadow-[0_0_20px_rgba(3,0,95,0.6)]" />
               </Link>
             ))}
+
+            {/* AI INTERVIEWER - Live product link */}
+            <a
+              href={AI_INTERVIEWER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex items-center gap-2 text-sm font-medium text-white/60 hover:text-white transition group whitespace-nowrap"
+            >
+              <Bot className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+              AI Interviewer
+              <span className="px-1.5 py-0.5 rounded-full bg-gradient-to-r from-[#03005F] to-indigo-500 text-[9px] font-bold tracking-wider text-white">
+                NEW
+              </span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-[#03005F] to-indigo-500 group-hover:w-full transition-all duration-500 shadow-[0_0_20px_rgba(3,0,95,0.6)]" />
+            </a>
 
             {/* CONTACT US BUTTON - Clear and prominent */}
             <Button
@@ -115,6 +132,21 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
+
+              {/* AI Interviewer - Mobile */}
+              <a
+                href={AI_INTERVIEWER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-medium text-white/60 hover:text-white transition px-4 py-2 rounded-lg hover:bg-white/5 border border-transparent hover:border-white/10"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Bot className="w-4 h-4 text-indigo-400" />
+                AI Interviewer
+                <span className="px-1.5 py-0.5 rounded-full bg-gradient-to-r from-[#03005F] to-indigo-500 text-[9px] font-bold tracking-wider text-white">
+                  NEW
+                </span>
+              </a>
 
               {/* Contact Us - Mobile */}
               <Button
