@@ -45,12 +45,12 @@ export default function MobileDevelopmentPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-primary text-primary-foreground py-20">
+      <section className="bg-gradient-to-b from-[#4FD2FF] via-[#22B4F5] to-[#0A7FD1] text-[#0B1440] py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <Smartphone className="h-16 w-16 mx-auto mb-6 text-secondary" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Mobile App Development</h1>
-            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed">
+            <Smartphone className="h-16 w-16 mx-auto mb-6 text-[#0B1440]" />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance text-[#0B1440]">Mobile App Development</h1>
+            <p className="text-lg md:text-xl text-[#0B1440]/75 leading-relaxed">
               Scalable Android and iOS applications that deliver exceptional user experiences and drive engagement.
             </p>
           </div>

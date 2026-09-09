@@ -3,74 +3,191 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Modern gradient-based theme with vibrant colors */
+/*
+ * Tinzwave brand palette
+ * - Primary gradient (sky -> ocean blue): #4FD2FF, #22B4F5, #0D96E8, #0A7FD1
+ * - Navy (text, accents, dark shapes): #0B1440, #16255C, #080F30
+ * - Glow orb accent (cyan -> blue): #78E1FF -> #0E96E8
+ *
+ * Every Tailwind color family that this codebase actually uses for accents
+ * (indigo/purple/violet/blue/cyan/sky/pink) is remapped below onto one
+ * unified brand scale, so existing utility classes (e.g. `from-purple-600`,
+ * `text-indigo-400`, `shadow-cyan-500/50`) automatically render in brand
+ * colors without touching every call site.
+ */
+@theme {
+  --color-indigo-50: #eafaff;
+  --color-indigo-100: #d3f4ff;
+  --color-indigo-200: #a8e9ff;
+  --color-indigo-300: #78e1ff;
+  --color-indigo-400: #4fd2ff;
+  --color-indigo-500: #22b4f5;
+  --color-indigo-600: #0d96e8;
+  --color-indigo-700: #0a7fd1;
+  --color-indigo-800: #0b3e8a;
+  --color-indigo-900: #16255c;
+  --color-indigo-950: #0b1440;
+
+  --color-purple-50: #eafaff;
+  --color-purple-100: #d3f4ff;
+  --color-purple-200: #a8e9ff;
+  --color-purple-300: #78e1ff;
+  --color-purple-400: #4fd2ff;
+  --color-purple-500: #22b4f5;
+  --color-purple-600: #0d96e8;
+  --color-purple-700: #0a7fd1;
+  --color-purple-800: #0b3e8a;
+  --color-purple-900: #16255c;
+  --color-purple-950: #0b1440;
+
+  --color-violet-50: #eafaff;
+  --color-violet-100: #d3f4ff;
+  --color-violet-200: #a8e9ff;
+  --color-violet-300: #78e1ff;
+  --color-violet-400: #4fd2ff;
+  --color-violet-500: #22b4f5;
+  --color-violet-600: #0d96e8;
+  --color-violet-700: #0a7fd1;
+  --color-violet-800: #0b3e8a;
+  --color-violet-900: #16255c;
+  --color-violet-950: #0b1440;
+
+  --color-fuchsia-50: #eafaff;
+  --color-fuchsia-100: #d3f4ff;
+  --color-fuchsia-200: #a8e9ff;
+  --color-fuchsia-300: #78e1ff;
+  --color-fuchsia-400: #4fd2ff;
+  --color-fuchsia-500: #22b4f5;
+  --color-fuchsia-600: #0d96e8;
+  --color-fuchsia-700: #0a7fd1;
+  --color-fuchsia-800: #0b3e8a;
+  --color-fuchsia-900: #16255c;
+  --color-fuchsia-950: #0b1440;
+
+  --color-pink-50: #eafaff;
+  --color-pink-100: #d3f4ff;
+  --color-pink-200: #a8e9ff;
+  --color-pink-300: #78e1ff;
+  --color-pink-400: #4fd2ff;
+  --color-pink-500: #22b4f5;
+  --color-pink-600: #0d96e8;
+  --color-pink-700: #0a7fd1;
+  --color-pink-800: #0b3e8a;
+  --color-pink-900: #16255c;
+  --color-pink-950: #0b1440;
+
+  --color-blue-50: #eafaff;
+  --color-blue-100: #d3f4ff;
+  --color-blue-200: #a8e9ff;
+  --color-blue-300: #78e1ff;
+  --color-blue-400: #4fd2ff;
+  --color-blue-500: #22b4f5;
+  --color-blue-600: #0d96e8;
+  --color-blue-700: #0a7fd1;
+  --color-blue-800: #0b3e8a;
+  --color-blue-900: #16255c;
+  --color-blue-950: #0b1440;
+
+  --color-sky-50: #eafaff;
+  --color-sky-100: #d3f4ff;
+  --color-sky-200: #a8e9ff;
+  --color-sky-300: #78e1ff;
+  --color-sky-400: #4fd2ff;
+  --color-sky-500: #22b4f5;
+  --color-sky-600: #0d96e8;
+  --color-sky-700: #0a7fd1;
+  --color-sky-800: #0b3e8a;
+  --color-sky-900: #16255c;
+  --color-sky-950: #0b1440;
+
+  --color-cyan-50: #eafaff;
+  --color-cyan-100: #d3f4ff;
+  --color-cyan-200: #a8e9ff;
+  --color-cyan-300: #78e1ff;
+  --color-cyan-400: #4fd2ff;
+  --color-cyan-500: #22b4f5;
+  --color-cyan-600: #0d96e8;
+  --color-cyan-700: #0a7fd1;
+  --color-cyan-800: #0b3e8a;
+  --color-cyan-900: #16255c;
+  --color-cyan-950: #0b1440;
+
+  /* Direct brand tokens (bg-navy, text-glow-start, from-glow-end, etc.) */
+  --color-navy: #0b1440;
+  --color-navy-light: #16255c;
+  --color-navy-dark: #080f30;
+  --color-glow-start: #78e1ff;
+  --color-glow-end: #0e96e8;
+}
+
+/* Brand theme */
 :root {
   --background: oklch(0.99 0 0);
-  --foreground: oklch(0.15 0.02 280);
+  --foreground: #0b1440;
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.02 280);
+  --card-foreground: #0b1440;
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.02 280);
+  --popover-foreground: #0b1440;
 
-  /* Vibrant gradient colors */
-  --primary: oklch(0.18 0.18 265);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.75 0.12 220);
-  --secondary-foreground: oklch(0.15 0.02 280);
-  --accent: oklch(0.65 0.22 290);
-  --accent-foreground: oklch(1 0 0);
+  /* Brand colors */
+  --primary: #0b1440;
+  --primary-foreground: #ffffff;
+  --secondary: #0a7fd1;
+  --secondary-foreground: #ffffff;
+  --accent: #22b4f5;
+  --accent-foreground: #ffffff;
 
-  --muted: oklch(0.96 0.005 280);
-  --muted-foreground: oklch(0.5 0.01 280);
+  --muted: #eef5fc;
+  --muted-foreground: #4a5578;
   --destructive: oklch(0.55 0.25 25);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.92 0.01 280);
-  --input: oklch(0.92 0.01 280);
-  --ring: oklch(0.65 0.22 290);
+  --border: #dce7f5;
+  --input: #dce7f5;
+  --ring: #22b4f5;
 
-  --gradient-1: linear-gradient(135deg, oklch(0.18 0.18 265), oklch(0.65 0.22 290));
-  --gradient-2: linear-gradient(135deg, oklch(0.75 0.12 220), oklch(0.65 0.22 290));
-  --gradient-3: linear-gradient(135deg, oklch(0.65 0.22 290), oklch(0.75 0.2 340));
+  --gradient-1: linear-gradient(135deg, #4fd2ff, #22b4f5, #0d96e8, #0a7fd1);
+  --gradient-2: linear-gradient(135deg, #0b1440, #0d96e8);
+  --gradient-3: linear-gradient(135deg, #78e1ff, #0e96e8);
 
   --radius: 1rem;
   --sidebar: oklch(0.99 0 0);
-  --sidebar-foreground: oklch(0.15 0.02 280);
-  --sidebar-primary: oklch(0.18 0.18 265);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.96 0.005 280);
-  --sidebar-accent-foreground: oklch(0.15 0.02 280);
-  --sidebar-border: oklch(0.92 0.01 280);
-  --sidebar-ring: oklch(0.7 0.01 280);
+  --sidebar-foreground: #0b1440;
+  --sidebar-primary: #0b1440;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eef5fc;
+  --sidebar-accent-foreground: #0b1440;
+  --sidebar-border: #dce7f5;
+  --sidebar-ring: #22b4f5;
 }
 
 .dark {
-  --background: oklch(0.12 0.03 280);
+  --background: #080f30;
   --foreground: oklch(0.98 0 0);
-  --card: oklch(0.16 0.03 280);
+  --card: #0b1440;
   --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.16 0.03 280);
+  --popover: #0b1440;
   --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.75 0.12 220);
-  --primary-foreground: oklch(0.12 0.03 280);
-  --secondary: oklch(0.25 0.03 280);
+  --primary: #4fd2ff;
+  --primary-foreground: #080f30;
+  --secondary: #16255c;
   --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.22 0.03 280);
-  --muted-foreground: oklch(0.65 0.01 280);
-  --accent: oklch(0.65 0.22 290);
-  --accent-foreground: oklch(0.98 0 0);
+  --muted: #16255c;
+  --muted-foreground: #a8c2e8;
+  --accent: #22b4f5;
+  --accent-foreground: #080f30;
   --destructive: oklch(0.45 0.18 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.25 0.03 280);
-  --input: oklch(0.25 0.03 280);
-  --ring: oklch(0.65 0.22 290);
-  --sidebar: oklch(0.16 0.03 280);
+  --border: #16255c;
+  --input: #16255c;
+  --ring: #22b4f5;
+  --sidebar: #0b1440;
   --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.75 0.12 220);
-  --sidebar-primary-foreground: oklch(0.12 0.03 280);
-  --sidebar-accent: oklch(0.22 0.03 280);
+  --sidebar-primary: #4fd2ff;
+  --sidebar-primary-foreground: #080f30;
+  --sidebar-accent: #16255c;
   --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(0.25 0.03 280);
-  --sidebar-ring: oklch(0.45 0.01 280);
+  --sidebar-border: #16255c;
+  --sidebar-ring: #22b4f5;
 }
 
 @theme inline {
@@ -119,23 +236,23 @@
 
   /* Adding custom gradient and glow utilities */
   .gradient-primary {
-    background: linear-gradient(135deg, oklch(0.18 0.18 265), oklch(0.65 0.22 290));
+    background: linear-gradient(135deg, #4fd2ff, #22b4f5, #0d96e8, #0a7fd1);
   }
 
   .gradient-secondary {
-    background: linear-gradient(135deg, oklch(0.75 0.12 220), oklch(0.65 0.22 290));
+    background: linear-gradient(135deg, #0a7fd1, #0b1440);
   }
 
   .gradient-accent {
-    background: linear-gradient(135deg, oklch(0.65 0.22 290), oklch(0.75 0.2 340));
+    background: linear-gradient(135deg, #78e1ff, #0e96e8);
   }
 
   .glow-effect {
-    box-shadow: 0 0 40px -10px oklch(0.65 0.22 290);
+    box-shadow: 0 0 40px -10px #0e96e8;
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, oklch(0.18 0.18 265), oklch(0.65 0.22 290), oklch(0.75 0.12 220));
+    background: linear-gradient(135deg, #0b1440, #0d96e8, #4fd2ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -174,10 +291,10 @@
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 40px -10px oklch(0.65 0.22 290);
+    box-shadow: 0 0 40px -10px #0e96e8;
   }
   50% {
-    box-shadow: 0 0 60px 0px oklch(0.65 0.22 290);
+    box-shadow: 0 0 60px 0px #78e1ff;
   }
 }
 

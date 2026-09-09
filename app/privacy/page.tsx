@@ -10,28 +10,27 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-[#0B1440]">
       <Navigation />
 
-      <section className="relative py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#03005F]/40 via-black to-black" />
+      <section className="relative py-28 overflow-hidden bg-gradient-to-b from-[#4FD2FF] via-[#22B4F5] to-[#0A7FD1]">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <Badge className="mb-4 px-4 py-1.5 border border-white/20 bg-white/5 text-white/70 font-mono text-xs tracking-widest">
+            <Badge className="mb-4 px-4 py-1.5 border border-white/10 bg-[#0B1440]/90 text-white font-mono text-xs tracking-widest">
               LEGAL
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-[#0B1440]">
               Privacy Policy
             </h1>
-            <p className="mt-4 text-white/40 text-sm">Last updated: August 2, 2026</p>
+            <p className="mt-4 text-[#0B1440]/60 text-sm">Last updated: August 2, 2026</p>
           </div>
         </div>
       </section>
 
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto space-y-10 text-white/60 leading-relaxed">
-            <p className="text-white/50 text-sm border border-white/10 bg-white/5 rounded-xl p-4">
+          <div className="max-w-3xl mx-auto space-y-10 text-[#0B1440]/70 leading-relaxed">
+            <p className="text-[#0B1440]/70 text-sm border border-[#0B1440]/10 bg-[#0B1440]/5 rounded-xl p-4">
               This policy explains what information Tinzwave Technologies ("Tinzwave", "we", "us") collects through
               this website and how it is used. It is a general-purpose policy and is not a substitute for advice from
               a qualified lawyer — if you need this document to meet specific regulatory requirements (including the
@@ -39,7 +38,7 @@ export default function PrivacyPage() {
             </p>
 
             <div>
-              <h2 className="text-2xl font-bold text-white mb-3">Information We Collect</h2>
+              <h2 className="text-2xl font-bold text-[#0B1440] mb-3">Information We Collect</h2>
               <p>We collect information you provide directly to us, including:</p>
               <ul className="list-disc list-inside mt-3 space-y-1.5">
                 <li>Name, email address, and message content submitted through our contact form</li>
@@ -53,7 +52,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-white mb-3">How We Use Information</h2>
+              <h2 className="text-2xl font-bold text-[#0B1440] mb-3">How We Use Information</h2>
               <ul className="list-disc list-inside space-y-1.5">
                 <li>To respond to inquiries submitted through the contact form or WhatsApp</li>
                 <li>To process course enrollments and communicate about our programs and services</li>
@@ -63,7 +62,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-white mb-3">Third-Party Services</h2>
+              <h2 className="text-2xl font-bold text-[#0B1440] mb-3">Third-Party Services</h2>
               <p>
                 Our contact form is processed by EmailJS, a third-party email delivery service, which receives the
                 name, email, and message you submit in order to deliver it to us. WhatsApp conversations are subject
@@ -73,7 +72,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-white mb-3">Data Security</h2>
+              <h2 className="text-2xl font-bold text-[#0B1440] mb-3">Data Security</h2>
               <p>
                 We take reasonable measures to protect the information you share with us, but no method of
                 transmission over the internet is completely secure, and we cannot guarantee absolute security.
@@ -81,7 +80,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-white mb-3">Your Rights</h2>
+              <h2 className="text-2xl font-bold text-[#0B1440] mb-3">Your Rights</h2>
               <p>
                 You may request access to, correction of, or deletion of your personal information by contacting us
                 using the details below.
@@ -89,7 +88,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-white mb-3">Children's Privacy</h2>
+              <h2 className="text-2xl font-bold text-[#0B1440] mb-3">Children's Privacy</h2>
               <p>
                 Our services are intended for individuals capable of entering into their own agreements. We do not
                 knowingly collect personal information from children without parental consent.
@@ -97,7 +96,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-white mb-3">Changes to This Policy</h2>
+              <h2 className="text-2xl font-bold text-[#0B1440] mb-3">Changes to This Policy</h2>
               <p>
                 We may update this policy from time to time. Changes will be posted on this page with an updated
                 revision date.
@@ -105,10 +104,10 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-white mb-3">Contact Us</h2>
+              <h2 className="text-2xl font-bold text-[#0B1440] mb-3">Contact Us</h2>
               <p>
                 Questions about this policy can be sent to{" "}
-                <a href="mailto:info@tinzwave.com" className="text-indigo-400 hover:text-indigo-300 transition">
+                <a href="mailto:info@tinzwave.com" className="text-indigo-700 hover:text-indigo-900 transition">
                   info@tinzwave.com
                 </a>{" "}
                 or by visiting us at E6 Adeniran Ogunsanya Shoprite Mall, Surulere, Lagos, Nigeria.

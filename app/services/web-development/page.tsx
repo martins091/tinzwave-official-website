@@ -54,12 +54,12 @@ export default function WebDevelopmentPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-primary text-primary-foreground py-20">
+      <section className="bg-gradient-to-b from-[#4FD2FF] via-[#22B4F5] to-[#0A7FD1] text-[#0B1440] py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <Globe className="h-16 w-16 mx-auto mb-6 text-secondary" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Website Development</h1>
-            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed">
+            <Globe className="h-16 w-16 mx-auto mb-6 text-[#0B1440]" />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance text-[#0B1440]">Website Development</h1>
+            <p className="text-lg md:text-xl text-[#0B1440]/75 leading-relaxed">
               Professional, responsive, and SEO-ready websites designed to elevate your online presence and drive
               results.
             </p>

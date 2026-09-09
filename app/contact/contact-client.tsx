@@ -24,6 +24,7 @@ import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ContactPage() {
   const handleWhatsAppClick = () => {
@@ -90,33 +91,36 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-[#0B1440]">
       <Navigation />
 
-      {/* ========== HERO - Premium 2038 Style ========== */}
+      {/* ========== HERO (image bg) ========== */}
       <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#03005F]/40 via-black to-black" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#03005F]/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
-        
+        <div className="absolute inset-0">
+          <Image src="/team-photo.jpg" alt="" fill className="object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1440]/85 via-[#0B1440]/80 to-[#080F30]/95" />
+        </div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#22B4F5]/15 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse delay-1000" />
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl mb-8">
-              <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-lg shadow-white/20" />
-              <span className="text-white/80 font-mono text-xs tracking-[0.2em]">
+            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/15 bg-white/10 backdrop-blur-xl mb-8">
+              <span className="w-2 h-2 bg-[#78E1FF] rounded-full animate-pulse shadow-lg shadow-[#78E1FF]/50" />
+              <span className="text-white/90 font-mono text-xs tracking-[0.2em]">
                 ⚡ GET IN TOUCH
               </span>
-              <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-lg shadow-white/20" />
+              <span className="w-2 h-2 bg-[#78E1FF] rounded-full animate-pulse shadow-lg shadow-[#78E1FF]/50" />
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
               <span className="text-white">Contact</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#03005F] via-indigo-400 to-purple-400 animate-gradient">
+              <span className="block text-[#78E1FF]">
                 TinzWave
               </span>
             </h1>
-            
-            <p className="mt-6 text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl mx-auto">
+
+            <p className="mt-6 text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
               Have questions about our services or courses? We'd love to hear
               from you. Reach out and let's start a conversation.
             </p>
@@ -131,30 +135,29 @@ export default function ContactPage() {
             
             {/* WhatsApp Contact - Premium Card */}
             <Reveal>
-              <div className="relative p-8 rounded-3xl border border-white/10 bg-gradient-to-b from-[#03005F]/10 to-transparent backdrop-blur-sm hover:bg-white/5 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10 h-full flex flex-col">
-                <div className="absolute inset-0 bg-[#03005F]/10 blur-3xl" />
+              <div className="relative p-8 rounded-3xl border border-[#0B1440]/10 bg-white shadow-xl shadow-[#0B1440]/5 hover:shadow-2xl hover:shadow-[#0B1440]/10 transition-all duration-500 hover:scale-[1.02] h-full flex flex-col">
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#03005F] to-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0B1440] to-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
                       <MessageCircle className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <Badge className="border border-white/20 bg-white/5 text-white/80 font-mono text-xs tracking-widest">
+                      <Badge className="border border-[#0B1440]/15 bg-[#0B1440]/5 text-[#0B1440]/70 font-mono text-xs tracking-widest">
                         INSTANT RESPONSE
                       </Badge>
                     </div>
                   </div>
-                  
-                  <h2 className="text-2xl font-bold text-white mb-4">
+
+                  <h2 className="text-2xl font-bold text-[#0B1440] mb-4">
                     Quick Contact
                   </h2>
-                  
-                  <p className="text-white/50 leading-relaxed flex-1 mb-8">
+
+                  <p className="text-[#0B1440]/60 leading-relaxed flex-1 mb-8">
                     Get instant responses to your questions. Click the button
                     below to start a conversation on WhatsApp and connect with
                     our team directly.
                   </p>
-                  
+
                   <div>
                     <Button
                       onClick={handleWhatsAppClick}
@@ -167,8 +170,8 @@ export default function ContactPage() {
                       </span>
                       <span className="absolute inset-0 bg-gradient-to-r from-[#25D366] to-[#075E54] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                     </Button>
-                    
-                    <div className="flex items-center justify-center gap-2 mt-4 text-white/30 text-xs font-mono">
+
+                    <div className="flex items-center justify-center gap-2 mt-4 text-[#0B1440]/40 text-xs font-mono">
                       <Clock className="w-3 h-3" />
                       <span>We respond within minutes during business hours</span>
                     </div>
@@ -181,67 +184,67 @@ export default function ContactPage() {
             <div className="space-y-6">
               {/* Contact Form */}
               <Reveal>
-                <div className="relative p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500">
+                <div className="relative p-6 rounded-2xl border border-[#0B1440]/10 bg-white shadow-xl shadow-[#0B1440]/5">
                   <div className="relative">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#03005F] to-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0B1440] to-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
                         <Send className="h-5 w-5 text-white" />
                       </div>
-                      <h2 className="text-xl font-bold text-white">
+                      <h2 className="text-xl font-bold text-[#0B1440]">
                         Send Us A Message
                       </h2>
                     </div>
-                    
+
                     <form ref={formRef} onSubmit={handleSend} className="space-y-4">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <input
                           name="name"
                           placeholder="Your name"
                           required
-                          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#03005F]/50 focus:outline-none transition"
+                          className="w-full px-4 py-3 rounded-xl bg-[#0B1440]/5 border border-[#0B1440]/15 text-[#0B1440] placeholder:text-[#0B1440]/35 focus:border-[#22B4F5] focus:outline-none transition"
                         />
                         <input
                           name="email"
                           type="email"
                           placeholder="Your email"
                           required
-                          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#03005F]/50 focus:outline-none transition"
+                          className="w-full px-4 py-3 rounded-xl bg-[#0B1440]/5 border border-[#0B1440]/15 text-[#0B1440] placeholder:text-[#0B1440]/35 focus:border-[#22B4F5] focus:outline-none transition"
                         />
                       </div>
                       <input
                         name="subject"
                         placeholder="Subject"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#03005F]/50 focus:outline-none transition"
+                        className="w-full px-4 py-3 rounded-xl bg-[#0B1440]/5 border border-[#0B1440]/15 text-[#0B1440] placeholder:text-[#0B1440]/35 focus:border-[#22B4F5] focus:outline-none transition"
                       />
                       <textarea
                         name="message"
                         rows={5}
                         placeholder="Your message"
                         required
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-[#03005F]/50 focus:outline-none transition resize-none"
+                        className="w-full px-4 py-3 rounded-xl bg-[#0B1440]/5 border border-[#0B1440]/15 text-[#0B1440] placeholder:text-[#0B1440]/35 focus:border-[#22B4F5] focus:outline-none transition resize-none"
                       />
-                      
+
                       <div className="flex flex-wrap items-center gap-4">
                         <Button
                           type="submit"
-                          className="relative px-8 py-6 text-sm font-bold bg-gradient-to-r from-[#03005F] via-indigo-600 to-[#03005F] text-white hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-500 overflow-hidden group rounded-xl shadow-lg shadow-indigo-500/10"
+                          className="relative px-8 py-6 text-sm font-bold bg-gradient-to-r from-[#0B1440] via-indigo-600 to-[#0B1440] text-white hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-500 overflow-hidden group rounded-xl shadow-lg shadow-indigo-500/10"
                           disabled={sending}
                         >
                           <span className="relative z-10 flex items-center gap-2">
                             {sending ? "Sending..." : "Send Message"}
                             <Send className="w-4 h-4" />
                           </span>
-                          <span className="absolute inset-0 bg-gradient-to-r from-[#03005F] to-purple-700 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
+                          <span className="absolute inset-0 bg-gradient-to-r from-[#0B1440] to-indigo-800 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                         </Button>
                         {status && (
                           <div className="flex flex-col gap-1.5">
-                            <p className={`text-sm ${status.type === "success" ? "text-emerald-400" : "text-rose-400"}`}>
+                            <p className={`text-sm ${status.type === "success" ? "text-emerald-600" : "text-rose-600"}`}>
                               {status.message}
                             </p>
                             {fallbackMailto && (
                               <a
                                 href={fallbackMailto}
-                                className="inline-flex items-center gap-1.5 text-sm text-white/70 underline underline-offset-2 hover:text-white transition"
+                                className="inline-flex items-center gap-1.5 text-sm text-[#0B1440]/70 underline underline-offset-2 hover:text-[#0B1440] transition"
                               >
                                 <Mail className="w-3.5 h-3.5" />
                                 Open email app to send instead
@@ -257,55 +260,55 @@ export default function ContactPage() {
 
               {/* Contact Information */}
               <Reveal>
-                <div className="relative p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500">
+                <div className="relative p-6 rounded-2xl border border-[#0B1440]/10 bg-white shadow-xl shadow-[#0B1440]/5">
                   <div className="relative">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/20">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#22B4F5] to-indigo-600 flex items-center justify-center shadow-lg shadow-[#22B4F5]/20">
                         <Sparkles className="h-5 w-5 text-white" />
                       </div>
-                      <h2 className="text-xl font-bold text-white">
+                      <h2 className="text-xl font-bold text-[#0B1440]">
                         Contact Information
                       </h2>
                     </div>
-                    
+
                     <div className="space-y-5">
-                      <div className="flex items-start gap-4 group hover:bg-white/5 p-3 rounded-xl transition">
-                        <div className="w-10 h-10 rounded-xl bg-[#03005F]/20 border border-[#03005F]/30 flex items-center justify-center shrink-0 group-hover:bg-[#03005F]/30 transition">
-                          <Mail className="h-5 w-5 text-white/70" />
+                      <div className="flex items-start gap-4 group hover:bg-[#0B1440]/5 p-3 rounded-xl transition">
+                        <div className="w-10 h-10 rounded-xl bg-[#0B1440]/5 border border-[#0B1440]/15 flex items-center justify-center shrink-0 group-hover:bg-[#0B1440]/10 transition">
+                          <Mail className="h-5 w-5 text-[#0B1440]/70" />
                         </div>
                         <div>
-                          <h3 className="text-sm font-semibold text-white/60 mb-1">Email</h3>
+                          <h3 className="text-sm font-semibold text-[#0B1440]/60 mb-1">Email</h3>
                           <a
                             href="mailto:info@tinzwave.com"
-                            className="text-white/80 hover:text-white transition"
+                            className="text-[#0B1440]/85 hover:text-[#0B1440] transition"
                           >
                             info@tinzwave.com
                           </a>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-4 group hover:bg-white/5 p-3 rounded-xl transition">
-                        <div className="w-10 h-10 rounded-xl bg-[#03005F]/20 border border-[#03005F]/30 flex items-center justify-center shrink-0 group-hover:bg-[#03005F]/30 transition">
-                          <Phone className="h-5 w-5 text-white/70" />
+                      <div className="flex items-start gap-4 group hover:bg-[#0B1440]/5 p-3 rounded-xl transition">
+                        <div className="w-10 h-10 rounded-xl bg-[#0B1440]/5 border border-[#0B1440]/15 flex items-center justify-center shrink-0 group-hover:bg-[#0B1440]/10 transition">
+                          <Phone className="h-5 w-5 text-[#0B1440]/70" />
                         </div>
                         <div>
-                          <h3 className="text-sm font-semibold text-white/60 mb-1">Phone</h3>
+                          <h3 className="text-sm font-semibold text-[#0B1440]/60 mb-1">Phone</h3>
                           <a
                             href="tel:+2349161052706"
-                            className="text-white/80 hover:text-white transition"
+                            className="text-[#0B1440]/85 hover:text-[#0B1440] transition"
                           >
                             +234 916 105 2706
                           </a>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-4 group hover:bg-white/5 p-3 rounded-xl transition">
-                        <div className="w-10 h-10 rounded-xl bg-[#03005F]/20 border border-[#03005F]/30 flex items-center justify-center shrink-0 group-hover:bg-[#03005F]/30 transition">
-                          <MapPin className="h-5 w-5 text-white/70" />
+                      <div className="flex items-start gap-4 group hover:bg-[#0B1440]/5 p-3 rounded-xl transition">
+                        <div className="w-10 h-10 rounded-xl bg-[#0B1440]/5 border border-[#0B1440]/15 flex items-center justify-center shrink-0 group-hover:bg-[#0B1440]/10 transition">
+                          <MapPin className="h-5 w-5 text-[#0B1440]/70" />
                         </div>
                         <div>
-                          <h3 className="text-sm font-semibold text-white/60 mb-1">Office Location</h3>
-                          <div className="text-sm text-white/50 space-y-1">
+                          <h3 className="text-sm font-semibold text-[#0B1440]/60 mb-1">Office Location</h3>
+                          <div className="text-sm text-[#0B1440]/60 space-y-1">
                             <p>E6 Adeniran Ogunsanya Shoprite Mall</p>
                             <p>Surulere, Lagos 100001</p>
                             <p>Nigeria</p>
@@ -319,9 +322,9 @@ export default function ContactPage() {
 
               {/* Follow Us */}
               <Reveal>
-                <div className="relative p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500">
+                <div className="relative p-6 rounded-2xl border border-[#0B1440]/10 bg-white shadow-xl shadow-[#0B1440]/5">
                   <div className="relative">
-                    <h2 className="text-xl font-bold text-white mb-5">
+                    <h2 className="text-xl font-bold text-[#0B1440] mb-5">
                       Follow Us
                     </h2>
                     <div className="flex flex-wrap gap-3">
@@ -329,7 +332,7 @@ export default function ContactPage() {
                         href="https://facebook.com/tinzwave"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-white/60 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:scale-110 flex items-center justify-center"
+                        className="w-12 h-12 rounded-xl border border-[#0B1440]/10 bg-[#0B1440]/5 text-[#0B1440]/60 hover:text-white hover:bg-gradient-to-br hover:from-[#22B4F5] hover:to-[#0A7FD1] hover:border-transparent transition-all duration-300 hover:scale-110 flex items-center justify-center"
                         aria-label="Follow us on Facebook"
                       >
                         <Facebook className="h-5 w-5" />
@@ -338,7 +341,7 @@ export default function ContactPage() {
                         href="https://twitter.com/tinzwave"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-white/60 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:scale-110 flex items-center justify-center"
+                        className="w-12 h-12 rounded-xl border border-[#0B1440]/10 bg-[#0B1440]/5 text-[#0B1440]/60 hover:text-white hover:bg-gradient-to-br hover:from-[#22B4F5] hover:to-[#0A7FD1] hover:border-transparent transition-all duration-300 hover:scale-110 flex items-center justify-center"
                         aria-label="Follow us on Twitter"
                       >
                         <Twitter className="h-5 w-5" />
@@ -347,7 +350,7 @@ export default function ContactPage() {
                         href="https://instagram.com/tinzwave"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-white/60 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:scale-110 flex items-center justify-center"
+                        className="w-12 h-12 rounded-xl border border-[#0B1440]/10 bg-[#0B1440]/5 text-[#0B1440]/60 hover:text-white hover:bg-gradient-to-br hover:from-[#22B4F5] hover:to-[#0A7FD1] hover:border-transparent transition-all duration-300 hover:scale-110 flex items-center justify-center"
                         aria-label="Follow us on Instagram"
                       >
                         <Instagram className="h-5 w-5" />
@@ -356,7 +359,7 @@ export default function ContactPage() {
                         href="https://linkedin.com/company/tinzwave"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 rounded-xl border border-white/10 bg-white/5 text-white/60 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:scale-110 flex items-center justify-center"
+                        className="w-12 h-12 rounded-xl border border-[#0B1440]/10 bg-[#0B1440]/5 text-[#0B1440]/60 hover:text-white hover:bg-gradient-to-br hover:from-[#22B4F5] hover:to-[#0A7FD1] hover:border-transparent transition-all duration-300 hover:scale-110 flex items-center justify-center"
                         aria-label="Connect with us on LinkedIn"
                       >
                         <Linkedin className="h-5 w-5" />
@@ -371,23 +374,23 @@ export default function ContactPage() {
       </section>
 
       {/* ========== MAP SECTION ========== */}
-      <section className="py-20 bg-gradient-to-b from-black via-white/5 to-black">
+      <section className="py-20 bg-gradient-to-b from-[#4FD2FF] via-[#22B4F5] to-[#0D96E8]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Reveal>
               <div className="text-center mb-10">
-                <Badge className="mb-4 border border-white/20 bg-white/5 text-white/80 font-mono text-xs tracking-widest">
+                <Badge className="mb-4 border border-white/15 bg-[#0B1440]/90 text-white font-mono text-xs tracking-widest">
                   FIND US
                 </Badge>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0B1440] mb-4">
                   Visit Us
                 </h2>
-                <p className="text-white/40 text-lg">
+                <p className="text-[#0B1440]/60 text-lg">
                   E6 Adeniran Ogunsanya Shoprite Mall, Surulere, Lagos
                 </p>
               </div>
-              
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#03005F]/10">
+
+              <div className="relative rounded-2xl overflow-hidden border border-white/40 shadow-2xl shadow-[#080F30]/20">
                 <div className="w-full h-96 md:h-[450px]">
                   <iframe
                     title="Tinzwave Office Location"
@@ -400,18 +403,18 @@ export default function ContactPage() {
                   ></iframe>
                 </div>
               </div>
-              
+
               <div className="mt-6 text-center">
                 <a
                   href="https://www.google.com/maps/search/E6+Adeniran+Ogunsanya+Shoprite+Mall+Surulere+Lagos"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-white/50 hover:text-white transition font-medium group"
+                  className="inline-flex items-center gap-2 text-[#0B1440]/70 hover:text-[#0B1440] transition font-medium group"
                 >
                   <MapPin className="h-4 w-4" />
                   <span className="relative">
                     Get Directions on Google Maps
-                    <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-white group-hover:w-full transition-all duration-300" />
+                    <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-[#0B1440] group-hover:w-full transition-all duration-300" />
                   </span>
                   <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition" />
                 </a>

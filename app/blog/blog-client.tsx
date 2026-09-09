@@ -37,33 +37,41 @@ export default function BlogPage() {
   });
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-[#0B1440]">
       <Navigation />
 
-      {/* ========== HERO - Premium 2038 Style ========== */}
+      {/* ========== HERO (image bg) ========== */}
       <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#03005F]/40 via-black to-black" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#03005F]/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
-        
+        <div className="absolute inset-0">
+          <Image
+            src="/tech-skills-blog.jpg"
+            alt=""
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1440]/85 via-[#0B1440]/80 to-[#080F30]/95" />
+        </div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#22B4F5]/15 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse delay-1000" />
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl mb-8">
-              <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-lg shadow-white/20" />
-              <span className="text-white/80 font-mono text-xs tracking-[0.2em]">
+            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/15 bg-white/10 backdrop-blur-xl mb-8">
+              <span className="w-2 h-2 bg-[#78E1FF] rounded-full animate-pulse shadow-lg shadow-[#78E1FF]/40" />
+              <span className="text-white/90 font-mono text-xs tracking-[0.2em]">
                 ⚡ OUR BLOG
               </span>
-              <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-lg shadow-white/20" />
+              <span className="w-2 h-2 bg-[#78E1FF] rounded-full animate-pulse shadow-lg shadow-[#78E1FF]/40" />
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
               <span className="text-white">Tinzwave</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#03005F] via-indigo-400 to-purple-400 animate-gradient">
+              <span className="block text-[#78E1FF]">
                 Blog
               </span>
             </h1>
-            
-            <p className="mt-6 text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl mx-auto">
+
+            <p className="mt-6 text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
               Insights on technology, AI, digital skills, and innovation in Africa.
               Stay updated with the latest trends and tips.
             </p>
@@ -71,18 +79,18 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* ========== FILTERS - Premium ========== */}
-      <section className="py-6 border-b border-white/5 bg-white/5 backdrop-blur-sm sticky top-20 z-40">
+      {/* ========== FILTERS ========== */}
+      <section className="py-6 border-b border-[#0B1440]/10 bg-[#EEF5FC] backdrop-blur-sm sticky top-20 z-40">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             <div className="relative w-full md:w-96">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/30" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#0B1440]/40" />
               <Input
                 type="text"
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#03005F]/50 focus:ring-[#03005F]/20"
+                className="pl-10 bg-white border-[#0B1440]/15 text-[#0B1440] placeholder:text-[#0B1440]/40 focus:border-[#22B4F5]/60 focus:ring-[#22B4F5]/20"
               />
             </div>
 
@@ -95,8 +103,8 @@ export default function BlogPage() {
                   onClick={() => setSelectedCategory(category)}
                   className={
                     selectedCategory === category
-                      ? "bg-gradient-to-r from-[#03005F] to-indigo-600 text-white border-0 hover:from-[#03005F] hover:to-indigo-700"
-                      : "bg-transparent border-white/30 text-white/80 hover:text-white hover:bg-white/10 hover:border-white/50"
+                      ? "bg-gradient-to-r from-[#0B1440] to-indigo-600 text-white border-0 hover:from-[#0B1440] hover:to-indigo-700"
+                      : "bg-white border-[#0B1440]/20 text-[#0B1440]/70 hover:text-[#0B1440] hover:bg-[#0B1440]/5 hover:border-[#0B1440]/30"
                   }
                 >
                   {category}
@@ -108,16 +116,16 @@ export default function BlogPage() {
       </section>
 
       {/* ========== BLOG POSTS ========== */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-b from-white to-[#EAF9FF]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {filteredPosts.map((post) => (
               <Reveal key={post.id}>
-                <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10 h-full flex flex-col">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#03005F]/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition duration-500" />
-                  
+                <div className="group relative rounded-2xl overflow-hidden border border-[#0B1440]/10 bg-white hover:shadow-2xl hover:shadow-[#0A7FD1]/15 transition-all duration-500 hover:scale-[1.02] h-full flex flex-col">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#0B1440]/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none" />
+
                   {/* Image */}
-                  <div className="relative aspect-video overflow-hidden bg-gradient-to-b from-[#03005F]/20 to-black/80">
+                  <div className="relative aspect-video overflow-hidden bg-gradient-to-b from-[#0B1440]/20 to-[#080F30]">
                     <Image
                       src={post.imageUrl || "/placeholder.svg"}
                       alt={post.title}
@@ -125,43 +133,43 @@ export default function BlogPage() {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                    
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#080F30]/70 via-transparent to-transparent" />
+
                     {/* Category badge on image */}
                     <div className="absolute top-4 left-4 z-10">
-                      <Badge className="border border-white/20 bg-black/60 backdrop-blur-xl text-white/80 font-mono text-[10px] tracking-wider">
+                      <Badge className="border border-white/20 bg-[#0B1440]/80 backdrop-blur-xl text-white/90 font-mono text-[10px] tracking-wider">
                         {post.category}
                       </Badge>
                     </div>
                   </div>
 
                   <div className="relative p-6 flex flex-col flex-1">
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-indigo-300 transition duration-500 line-clamp-2">
+                    <h3 className="text-xl font-bold text-[#0B1440] mb-3 group-hover:text-[#0A7FD1] transition duration-500 line-clamp-2">
                       <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                     </h3>
-                    
-                    <p className="text-white/50 text-sm leading-relaxed flex-1 mb-4 line-clamp-3">
+
+                    <p className="text-[#0B1440]/60 text-sm leading-relaxed flex-1 mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
 
-                    <div className="flex items-center justify-between text-sm border-t border-white/5 pt-4">
-                      <div className="flex items-center gap-2 text-white/40">
-                        <Calendar className="h-4 w-4 text-white/30" />
+                    <div className="flex items-center justify-between text-sm border-t border-[#0B1440]/10 pt-4">
+                      <div className="flex items-center gap-2 text-[#0B1440]/50">
+                        <Calendar className="h-4 w-4 text-[#0B1440]/40" />
                         <span className="text-xs">{new Date(post.date).toLocaleDateString()}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-white/40">
-                        <Clock className="h-4 w-4 text-white/30" />
+                      <div className="flex items-center gap-2 text-[#0B1440]/50">
+                        <Clock className="h-4 w-4 text-[#0B1440]/40" />
                         <span className="text-xs">{post.readTime}</span>
                       </div>
                     </div>
 
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-white/50 hover:text-white transition group"
+                      className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#0A7FD1] hover:text-[#0B1440] transition group"
                     >
                       <span className="relative">
                         Read Article
-                        <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-white group-hover:w-full transition-all duration-300" />
+                        <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-[#0B1440] group-hover:w-full transition-all duration-300" />
                       </span>
                       <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition" />
                     </Link>
@@ -173,7 +181,7 @@ export default function BlogPage() {
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/40">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#0B1440]/10 bg-[#0B1440]/5 text-[#0B1440]/50">
                 <Search className="w-4 h-4" />
                 <span>No articles found matching your search.</span>
               </div>

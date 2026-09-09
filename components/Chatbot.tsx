@@ -69,29 +69,29 @@ export default function Chatbot() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close chat" : "Open chat"}
-        className="fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full bg-gradient-to-br from-[#03005F] to-indigo-600 text-white shadow-2xl shadow-[#03005F]/40 flex items-center justify-center border border-white/20 hover:scale-110 transition-all duration-300 backdrop-blur-xl"
+        className="fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full bg-gradient-to-br from-[#0B1440] to-indigo-600 text-white shadow-2xl shadow-[#0B1440]/40 flex items-center justify-center border border-white/20 hover:scale-110 transition-all duration-300 backdrop-blur-xl"
       >
         {open ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
         {!open && (
-          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-black animate-pulse" />
+          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-[#0B1440] animate-pulse" />
         )}
       </button>
 
       {/* Chat panel */}
       {open && (
-        <div className="fixed bottom-24 right-6 z-[60] w-[92vw] max-w-sm h-[70vh] max-h-[560px] rounded-2xl border border-white/10 bg-black/95 backdrop-blur-2xl shadow-2xl shadow-[#03005F]/30 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
+        <div className="fixed bottom-24 right-6 z-[60] w-[92vw] max-w-sm h-[70vh] max-h-[560px] rounded-2xl border border-[#0B1440]/10 bg-white/98 backdrop-blur-2xl shadow-2xl shadow-[#080F30]/25 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
           {/* Header */}
-          <div className="relative px-5 py-4 border-b border-white/10 bg-gradient-to-r from-[#03005F]/40 via-indigo-900/30 to-black">
+          <div className="relative px-5 py-4 border-b border-white/10 bg-gradient-to-r from-[#0B1440] to-[#0A7FD1]">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#03005F] to-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-500/30 shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center shrink-0">
                 <Bot className="w-5 h-5 text-white" />
               </div>
               <div className="min-w-0">
                 <p className="text-sm font-bold text-white flex items-center gap-1.5">
                   Tinzwave Assistant
-                  <Sparkles className="w-3.5 h-3.5 text-indigo-300" />
+                  <Sparkles className="w-3.5 h-3.5 text-[#78E1FF]" />
                 </p>
-                <p className="text-[11px] text-white/40 font-mono flex items-center gap-1.5">
+                <p className="text-[11px] text-white/70 font-mono flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
                   Online — instant answers
                 </p>
@@ -106,8 +106,8 @@ export default function Chatbot() {
                 <div
                   className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed whitespace-pre-line ${
                     m.sender === "user"
-                      ? "bg-gradient-to-br from-[#03005F] to-indigo-600 text-white rounded-br-sm"
-                      : "bg-white/5 border border-white/10 text-white/80 rounded-bl-sm"
+                      ? "bg-gradient-to-br from-[#0B1440] to-indigo-600 text-white rounded-br-sm"
+                      : "bg-[#0B1440]/5 border border-[#0B1440]/10 text-[#0B1440]/80 rounded-bl-sm"
                   }`}
                 >
                   {m.text}
@@ -117,10 +117,10 @@ export default function Chatbot() {
 
             {typing && (
               <div className="flex justify-start">
-                <div className="bg-white/5 border border-white/10 rounded-2xl rounded-bl-sm px-4 py-3 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-delay:-0.3s]" />
-                  <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce [animation-delay:-0.15s]" />
-                  <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce" />
+                <div className="bg-[#0B1440]/5 border border-[#0B1440]/10 rounded-2xl rounded-bl-sm px-4 py-3 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 bg-[#0B1440]/40 rounded-full animate-bounce [animation-delay:-0.3s]" />
+                  <span className="w-1.5 h-1.5 bg-[#0B1440]/40 rounded-full animate-bounce [animation-delay:-0.15s]" />
+                  <span className="w-1.5 h-1.5 bg-[#0B1440]/40 rounded-full animate-bounce" />
                 </div>
               </div>
             )}
@@ -131,7 +131,7 @@ export default function Chatbot() {
                   <button
                     key={q.id}
                     onClick={() => handleQuickReply(q.id)}
-                    className="px-3 py-1.5 rounded-full border border-white/15 bg-white/5 text-[11px] text-white/70 font-mono hover:bg-white/10 hover:border-white/30 hover:text-white transition"
+                    className="px-3 py-1.5 rounded-full border border-[#0B1440]/15 bg-[#0B1440]/5 text-[11px] text-[#0B1440]/70 font-mono hover:bg-[#0B1440]/10 hover:border-[#0B1440]/30 hover:text-[#0B1440] transition"
                   >
                     {q.label}
                   </button>
@@ -145,7 +145,7 @@ export default function Chatbot() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[11px] font-mono text-white/30 hover:text-white/60 transition underline underline-offset-2"
+                  className="text-[11px] font-mono text-[#0B1440]/40 hover:text-[#0B1440]/70 transition underline underline-offset-2"
                 >
                   Prefer a human? Chat with us on WhatsApp →
                 </a>
@@ -159,19 +159,19 @@ export default function Chatbot() {
               e.preventDefault();
               sendMessage(input);
             }}
-            className="p-3 border-t border-white/10 flex items-center gap-2"
+            className="p-3 border-t border-[#0B1440]/10 flex items-center gap-2"
           >
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask about courses, services..."
-              className="flex-1 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder:text-white/30 focus:border-[#03005F]/50 focus:outline-none transition"
+              className="flex-1 px-4 py-2.5 rounded-xl bg-[#0B1440]/5 border border-[#0B1440]/15 text-sm text-[#0B1440] placeholder:text-[#0B1440]/35 focus:border-[#22B4F5] focus:outline-none transition"
             />
             <button
               type="submit"
               disabled={!input.trim()}
               aria-label="Send message"
-              className="w-10 h-10 shrink-0 rounded-xl bg-gradient-to-br from-[#03005F] to-indigo-600 text-white flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-indigo-500/30 transition"
+              className="w-10 h-10 shrink-0 rounded-xl bg-gradient-to-br from-[#0B1440] to-indigo-600 text-white flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-indigo-500/30 transition"
             >
               <Send className="w-4 h-4" />
             </button>

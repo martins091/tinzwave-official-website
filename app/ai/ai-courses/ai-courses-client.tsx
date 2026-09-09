@@ -46,8 +46,8 @@ export default function AIPage() {
       id: 1,
       title: "AI Content Creation",
       icon: PenTool,
-      color: "from-blue-600 to-indigo-600",
-      badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+      color: "from-indigo-400 to-indigo-600",
+      badgeColor: "bg-white/10 text-[#78E1FF] border-white/15",
       description: "Master YouTube automation, script writing, and viral content generation with AI tools.",
       topics: [
         "Script writing & caption generation",
@@ -64,8 +64,8 @@ export default function AIPage() {
       id: 2,
       title: "AI Graphic Design & Branding",
       icon: Palette,
-      color: "from-purple-600 to-pink-600",
-      badgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/20",
+      color: "from-indigo-500 to-indigo-700",
+      badgeColor: "bg-white/10 text-[#78E1FF] border-white/15",
       description: "Create stunning thumbnails, logos, and brand identities using AI-powered design tools.",
       topics: [
         "Thumbnail design for high CTR",
@@ -82,8 +82,8 @@ export default function AIPage() {
       id: 3,
       title: "AI Image Generation",
       icon: ImageIcon,
-      color: "from-emerald-600 to-teal-600",
-      badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+      color: "from-indigo-300 to-indigo-500",
+      badgeColor: "bg-white/10 text-[#78E1FF] border-white/15",
       description: "Generate stunning product photos, marketing images, and character designs with AI.",
       topics: [
         "Product photography with AI",
@@ -100,8 +100,8 @@ export default function AIPage() {
       id: 4,
       title: "AI Website Building",
       icon: Code2,
-      color: "from-orange-600 to-red-600",
-      badgeColor: "bg-orange-500/10 text-orange-400 border-orange-500/20",
+      color: "from-indigo-600 to-indigo-800",
+      badgeColor: "bg-white/10 text-[#78E1FF] border-white/15",
       description: "Build landing pages, AI blogs, and sell websites to businesses using AI tools.",
       topics: [
         "Landing page development",
@@ -118,8 +118,8 @@ export default function AIPage() {
       id: 5,
       title: "AI Automation",
       icon: Bot,
-      color: "from-cyan-600 to-blue-600",
-      badgeColor: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
+      color: "from-indigo-400 to-indigo-700",
+      badgeColor: "bg-white/10 text-[#78E1FF] border-white/15",
       description: "Automate workflows, customer support, and business processes using cutting-edge AI.",
       topics: [
         "Workflow automation with AI",
@@ -137,8 +137,8 @@ export default function AIPage() {
       id: 6,
       title: "AI Engineering",
       icon: Cpu,
-      color: "from-violet-600 to-purple-600",
-      badgeColor: "bg-violet-500/10 text-violet-400 border-violet-500/20",
+      color: "from-indigo-700 to-[#0B1440]",
+      badgeColor: "bg-white/10 text-[#78E1FF] border-white/15",
       description: "Build custom AI models, fine-tune LLMs, and create production-ready AI systems.",
       topics: [
         "Prompt engineering mastery",
@@ -155,19 +155,34 @@ export default function AIPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-[#0B1440]">
 
       <Navigation />
-      
-      {/* AI COURSES SECTION - NEW */}
-      <section className="py-28 px-6 bg-white/5">
-        <div className="max-w-7xl mx-auto">
+
+      {/* AI COURSES SECTION (image bg) */}
+      <section className="relative py-28 px-6 overflow-hidden">
+        {/* Background photo + navy scrim */}
+        <div className="absolute inset-0">
+          <Image
+            src="/ai-engineering-course.jpg"
+            alt=""
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1440]/90 via-[#0B1440]/85 to-[#080F30]/95" />
+        </div>
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#22B4F5]/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="w-16 h-[2px] bg-[#03005F] mx-auto mb-5" />
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-              Our <span className="text-indigo-400">AI Courses</span>
+            <div className="w-16 h-[2px] bg-[#78E1FF] mx-auto mb-5" />
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
+              Our <span className="text-[#78E1FF]">AI Courses</span>
             </h2>
-            <p className="text-white/40 mt-4 max-w-2xl mx-auto">
+            <p className="text-white/60 mt-4 max-w-2xl mx-auto">
               From content creation to AI engineering — master the skills that matter in the AI revolution.
               Hands-on training with free tools and real-world projects.
             </p>
@@ -182,9 +197,9 @@ export default function AIPage() {
               { icon: Award, label: "Success Rate", value: "94%" }
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
-                <stat.icon className="w-8 h-8 text-indigo-400 mx-auto mb-3" />
+                <stat.icon className="w-8 h-8 text-[#78E1FF] mx-auto mb-3" />
                 <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-white/40 text-sm">{stat.label}</div>
+                <div className="text-white/50 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -192,7 +207,7 @@ export default function AIPage() {
           {/* Courses Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses.map((course) => (
-              <Card key={course.id} className="group relative bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl">
+              <Card key={course.id} className="group relative bg-white/5 border border-white/10 hover:border-[#78E1FF]/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl">
                 <div className="relative p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div className={`p-3 rounded-xl bg-gradient-to-br ${course.color} shadow-lg`}>
@@ -234,9 +249,9 @@ export default function AIPage() {
 
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-white/30">{course.level}</span>
-                    <Button 
+                    <Button
                       onClick={() => handleRegister(course.title)}
-                      className="bg-[#03005F] hover:bg-[#03005F]/90 text-white"
+                      className="bg-gradient-to-r from-[#22B4F5] to-[#0A7FD1] hover:shadow-lg hover:shadow-[#22B4F5]/30 text-white"
                     >
                       Register Now
                       <ChevronRight className="w-4 h-4 ml-1" />
@@ -249,15 +264,15 @@ export default function AIPage() {
 
           {/* CTA Button */}
           <div className="text-center mt-16">
-            <Button 
+            <Button
               onClick={handleCommunityJoin}
-              className="bg-[#03005F] hover:bg-[#03005F]/90 text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-[#03005F]/25"
+              className="bg-gradient-to-r from-[#22B4F5] via-[#0D96E8] to-[#0A7FD1] hover:shadow-2xl hover:shadow-[#22B4F5]/40 text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-[#0A7FD1]/25"
             >
               <Users className="w-5 h-5 mr-2" />
               Join Our AI Community to Get Started
               <ChevronRight className="w-5 h-5 ml-2" />
             </Button>
-            <p className="text-white/40 text-sm mt-4">
+            <p className="text-white/50 text-sm mt-4">
               💬 Message us on WhatsApp to get personalized course recommendations
             </p>
           </div>

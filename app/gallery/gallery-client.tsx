@@ -136,33 +136,41 @@ export default function GalleryPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-[#0B1440]">
       <Navigation />
 
-      {/* ========== HERO - Premium 2038 Style ========== */}
+      {/* ========== HERO - photo bg with navy scrim ========== */}
       <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#03005F]/40 via-black to-black" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#03005F]/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
-        
+        <div className="absolute inset-0">
+          <Image
+            src="/gallery1.jpeg"
+            alt=""
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1440]/85 via-[#0B1440]/80 to-[#080F30]/95" />
+        </div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#22B4F5]/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse delay-1000" />
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl mb-8">
-              <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-lg shadow-white/20" />
-              <span className="text-white/80 font-mono text-xs tracking-[0.2em]">
+            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/15 bg-[#0B1440]/90 backdrop-blur-xl mb-8">
+              <span className="w-2 h-2 bg-[#78E1FF] rounded-full animate-pulse shadow-lg shadow-[#78E1FF]/40" />
+              <span className="text-white/90 font-mono text-xs tracking-[0.2em]">
                 ⚡ OUR GALLERY
               </span>
-              <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-lg shadow-white/20" />
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse shadow-lg shadow-white/40" />
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
               <span className="text-white">Our</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#03005F] via-indigo-400 to-purple-400 animate-gradient">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#78E1FF] via-[#22B4F5] to-white animate-gradient">
                 Gallery
               </span>
             </h1>
-            
-            <p className="mt-6 text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl mx-auto">
+
+            <p className="mt-6 text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
               Explore our training sessions, lectures, certificate collections, and classroom activities.
               See what we've been building and who we've been empowering.
             </p>
@@ -174,21 +182,25 @@ export default function GalleryPage() {
       {galleryImages.map((section, sectionIndex) => (
         <section
           key={sectionIndex}
-          className={`py-20 ${sectionIndex % 2 === 0 ? "bg-black" : "bg-gradient-to-b from-black via-white/5 to-black"}`}
+          className={`py-20 ${
+            sectionIndex % 2 === 0
+              ? "bg-gradient-to-b from-[#4FD2FF] via-[#22B4F5] to-[#0D96E8]"
+              : "bg-gradient-to-b from-[#22B4F5] via-[#0D96E8] to-[#0A7FD1]"
+          }`}
         >
           <div className="container mx-auto px-4">
             <Reveal>
               <div className="text-center mb-16">
                 <div className="flex items-center justify-center gap-3 mb-4">
                   <span className="text-3xl">{section.icon}</span>
-                  <Badge className="border border-white/20 bg-white/5 text-white/80 font-mono text-xs tracking-widest">
+                  <Badge className="border border-white/15 bg-[#0B1440]/90 text-white font-mono text-xs tracking-widest">
                     SECTION {sectionIndex + 1}
                   </Badge>
                 </div>
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                <h2 className="text-3xl md:text-5xl font-bold text-[#0B1440] mb-4">
                   {section.category}
                 </h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-[#03005F] to-indigo-400 mx-auto rounded-full" />
+                <div className="w-20 h-1 bg-gradient-to-r from-[#0B1440] to-white/70 mx-auto rounded-full" />
               </div>
             </Reveal>
 
@@ -196,10 +208,11 @@ export default function GalleryPage() {
               {section.images.map((image, imageIndex) => (
                 <Reveal key={imageIndex}>
                   <div
-                    className="group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-white/10"
+                    className="group relative rounded-2xl overflow-hidden cursor-pointer border border-white/40 bg-white/30 backdrop-blur-sm hover:border-white/70 transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#080F30]/20"
                     onClick={() => setSelectedImage(image)}
                   >
-                    <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-b from-[#03005F]/20 to-black/80">
+                    {/* Gallery photo itself is left clean — no permanent scrim, only a hover caption overlay below */}
+                    <div className="relative aspect-[4/3] overflow-hidden bg-[#0B1440]/10">
                       <Image
                         src={image.url || "/placeholder.svg"}
                         alt={image.caption}
@@ -207,24 +220,24 @@ export default function GalleryPage() {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#080F30]/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
                       {/* Hover overlay with caption */}
                       <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
                         <div className="w-full">
                           <p className="text-white text-sm font-medium line-clamp-2">
                             {image.caption}
                           </p>
-                          <div className="flex items-center gap-2 mt-2 text-white/40 text-xs font-mono">
+                          <div className="flex items-center gap-2 mt-2 text-white/60 text-xs font-mono">
                             <span>View</span>
                             <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition" />
                           </div>
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Image counter badge */}
-                    <div className="absolute top-3 right-3 px-2 py-1 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl text-[10px] text-white/40 font-mono">
+                    <div className="absolute top-3 right-3 px-2 py-1 rounded-full border border-white/10 bg-[#0B1440]/70 backdrop-blur-xl text-[10px] text-white/70 font-mono">
                       {imageIndex + 1}/{section.images.length}
                     </div>
                   </div>
@@ -238,12 +251,12 @@ export default function GalleryPage() {
       {/* ========== LIGHTBOX MODAL - Premium 2038 ========== */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 backdrop-blur-xl"
+          className="fixed inset-0 bg-[#080F30]/95 z-50 flex items-center justify-center p-4 backdrop-blur-xl"
           onClick={() => setSelectedImage(null)}
         >
           {/* Close button */}
           <button
-            className="absolute top-6 right-6 p-3 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110"
+            className="absolute top-6 right-6 p-3 rounded-full border border-white/20 bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110"
             onClick={() => setSelectedImage(null)}
             aria-label="Close"
           >
@@ -251,12 +264,12 @@ export default function GalleryPage() {
           </button>
 
           {/* Image counter */}
-          <div className="absolute top-6 left-6 px-4 py-2 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl text-xs text-white/40 font-mono">
+          <div className="absolute top-6 left-6 px-4 py-2 rounded-full border border-white/10 bg-[#0B1440]/70 backdrop-blur-xl text-xs text-white/60 font-mono">
             Gallery View
           </div>
 
           <div className="max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#03005F]/20">
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#080F30]/40">
               <Image
                 src={selectedImage.url || "/placeholder.svg"}
                 alt={selectedImage.caption}
@@ -264,11 +277,11 @@ export default function GalleryPage() {
                 height={800}
                 className="w-full h-auto max-h-[80vh] object-contain"
               />
-              
+
               {/* Caption overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#080F30]/90 via-[#080F30]/50 to-transparent">
                 <div className="flex items-center gap-3">
-                  <div className="w-1 h-8 bg-gradient-to-b from-[#03005F] to-indigo-400 rounded-full" />
+                  <div className="w-1 h-8 bg-gradient-to-b from-[#22B4F5] to-[#78E1FF] rounded-full" />
                   <p className="text-white text-lg font-medium">{selectedImage.caption}</p>
                 </div>
               </div>
@@ -276,7 +289,7 @@ export default function GalleryPage() {
 
             {/* Navigation hint */}
             <div className="text-center mt-4">
-              <p className="text-xs text-white/20 font-mono tracking-wider">
+              <p className="text-xs text-white/40 font-mono tracking-wider">
                 Click outside to close · ESC to exit
               </p>
             </div>

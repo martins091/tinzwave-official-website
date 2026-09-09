@@ -87,7 +87,7 @@ export default function HomePage() {
       description:
         "High-quality practical training in AI Engineering, Fullstack Web (MERN), Mobile Development, and Digital Marketing. Bootcamps, professional courses, workshops, and corporate training.",
       href: "/courses",
-      gradient: "from-rose-500 to-pink-500",
+      gradient: "from-indigo-400 to-indigo-600",
       badge: "Training Hub",
       features: ["Bootcamps", "Professional Courses", "Corporate Training", "Workshops"],
       stat: "500+ students",
@@ -98,7 +98,7 @@ export default function HomePage() {
       description:
         "Design, build, and deploy scalable AI solutions, web & mobile applications, business automation, and MVPs for startups and enterprises.",
       href: "/labs",
-      gradient: "from-indigo-500 to-purple-500",
+      gradient: "from-indigo-600 to-indigo-800",
       badge: "Innovation Lab",
       features: ["AI Solutions", "Web Apps", "Mobile Apps", "MVP Development"],
       stat: "50+ projects",
@@ -109,7 +109,7 @@ export default function HomePage() {
       description:
         "Professional environment for learning, collaboration, and events. Training space rentals, meeting rooms, workshops, and tech community gatherings.",
       href: "/workspace",
-      gradient: "from-emerald-500 to-teal-500",
+      gradient: "from-indigo-300 to-indigo-500",
       badge: "Community Space",
       features: ["Training Space", "Meetings", "Workshops", "Tech Events"],
       stat: "1,200+ visitors",
@@ -135,19 +135,19 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-black text-white">
+    <div className="min-h-screen overflow-x-hidden bg-white text-[#0B1440]">
       <Navigation />
 
-      {/* ========== FUTURISTIC 2038 HERO WITH FULL-SIZE IMAGE ========== */}
+      {/* ========== HERO — brand sky-to-ocean gradient ========== */}
       <section
         className="relative min-h-[100vh] flex items-center overflow-hidden"
         style={{
           background: `
-      radial-gradient(ellipse at ${50 + mousePosition.x * 8}% ${40 + mousePosition.y * 8}%, 
-      rgba(3, 0, 95, 0.6), transparent 60%),
-      radial-gradient(ellipse at ${70 + mousePosition.x * 6}% ${60 + mousePosition.y * 6}%, 
-      rgba(99, 102, 241, 0.2), transparent 50%),
-      #000000
+      radial-gradient(ellipse at ${50 + mousePosition.x * 8}% ${40 + mousePosition.y * 8}%,
+      rgba(255, 255, 255, 0.35), transparent 60%),
+      radial-gradient(ellipse at ${70 + mousePosition.x * 6}% ${60 + mousePosition.y * 6}%,
+      rgba(11, 20, 64, 0.15), transparent 50%),
+      linear-gradient(160deg, #4FD2FF 0%, #22B4F5 40%, #0D96E8 75%, #0A7FD1 100%)
     `,
         }}
       >
@@ -157,8 +157,8 @@ export default function HomePage() {
             className="absolute inset-0"
             style={{
               backgroundImage: `
-          linear-gradient(rgba(3, 0, 95, 0.06) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(3, 0, 95, 0.06) 1px, transparent 1px)
+          linear-gradient(rgba(11, 20, 64, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(11, 20, 64, 0.08) 1px, transparent 1px)
         `,
               backgroundSize: "50px 50px",
               transform: `translate(${mousePosition.x * 12}px, ${mousePosition.y * 12}px)`,
@@ -166,20 +166,20 @@ export default function HomePage() {
           />
         </div>
 
-        {/* Orbital Rings - Enhanced 2038 style */}
+        {/* Orbital Rings */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#03005F]/20 w-[500px] h-[500px] animate-[spin_25s_linear_infinite]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-indigo-500/15 w-[700px] h-[700px] animate-[spin_30s_linear_infinite_reverse]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-500/10 w-[900px] h-[900px] animate-[spin_35s_linear_infinite]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-500/10 w-[1100px] h-[1100px] animate-[spin_40s_linear_infinite_reverse]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/25 w-[500px] h-[500px] animate-[spin_25s_linear_infinite]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#0B1440]/15 w-[700px] h-[700px] animate-[spin_30s_linear_infinite_reverse]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15 w-[900px] h-[900px] animate-[spin_35s_linear_infinite]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#0B1440]/10 w-[1100px] h-[1100px] animate-[spin_40s_linear_infinite_reverse]" />
 
           {/* Floating particles */}
-          <div className="absolute top-[20%] left-[15%] w-1 h-1 bg-indigo-400 rounded-full animate-pulse shadow-lg shadow-indigo-500/50" />
-          <div className="absolute top-[30%] right-[20%] w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse shadow-lg shadow-purple-500/50 delay-300" />
-          <div className="absolute bottom-[25%] left-[25%] w-1 h-1 bg-cyan-400 rounded-full animate-pulse shadow-lg shadow-cyan-500/50 delay-700" />
-          <div className="absolute top-[60%] right-[15%] w-1.5 h-1.5 bg-rose-400 rounded-full animate-pulse shadow-lg shadow-rose-500/50 delay-500" />
-          <div className="absolute top-[10%] left-[45%] w-2 h-2 bg-[#03005F] rounded-full animate-pulse shadow-lg shadow-[#03005F]/50 delay-200" />
-          <div className="absolute bottom-[15%] right-[45%] w-1 h-1 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-500/50 delay-1000" />
+          <div className="absolute top-[20%] left-[15%] w-1 h-1 bg-white rounded-full animate-pulse shadow-lg shadow-white/50" />
+          <div className="absolute top-[30%] right-[20%] w-1.5 h-1.5 bg-[#78E1FF] rounded-full animate-pulse shadow-lg shadow-[#78E1FF]/50 delay-300" />
+          <div className="absolute bottom-[25%] left-[25%] w-1 h-1 bg-white rounded-full animate-pulse shadow-lg shadow-white/50 delay-700" />
+          <div className="absolute top-[60%] right-[15%] w-1.5 h-1.5 bg-[#0B1440] rounded-full animate-pulse shadow-lg shadow-[#0B1440]/50 delay-500" />
+          <div className="absolute top-[10%] left-[45%] w-2 h-2 bg-[#0B1440] rounded-full animate-pulse shadow-lg shadow-[#0B1440]/50 delay-200" />
+          <div className="absolute bottom-[15%] right-[45%] w-1 h-1 bg-white rounded-full animate-pulse shadow-lg shadow-white/50 delay-1000" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10 w-full">
@@ -195,54 +195,54 @@ export default function HomePage() {
                     href={AI_INTERVIEWER_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 backdrop-blur-xl hover:bg-indigo-500/20 hover:border-indigo-400/50 transition-all duration-300 group"
+                    className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/10 bg-[#0B1440]/90 backdrop-blur-xl hover:bg-[#0B1440] transition-all duration-300 group"
                   >
                     <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75" />
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-400" />
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#78E1FF] opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#78E1FF]" />
                     </span>
                     <span className="text-xs font-medium text-white/80 tracking-wide">
-                      Just Launched — <span className="text-indigo-300 font-semibold">Tinzwave AI Interviewer</span>
+                      Just Launched — <span className="text-[#78E1FF] font-semibold">Tinzwave AI Interviewer</span>
                     </span>
-                    <ArrowRight className="w-3.5 h-3.5 text-indigo-300 group-hover:translate-x-1 transition" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#78E1FF] group-hover:translate-x-1 transition" />
                   </a>
 
-                  {/* Main Headline - 2038 style */}
+                  {/* Main Headline */}
                   <div>
                     <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1]">
-                      <span className="block mt-1 text-white/90 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                      <span className="block mt-1 text-[#0B1440] text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                         Innovation
                       </span>
-                      <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400 text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-gradient">
+                      <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                         Ecosystem
                       </span>
                     </h1>
                   </div>
 
-                  <p className="text-lg sm:text-xl text-white/50 max-w-lg leading-relaxed font-light tracking-wide">
+                  <p className="text-lg sm:text-xl text-[#0B1440]/70 max-w-lg leading-relaxed font-light tracking-wide">
                     AI Academy • Innovation Labs • Workspace</p>
 
-                  {/* CTA Buttons - 2038 style with glow */}
+                  {/* CTA Buttons */}
                   <div className="flex flex-wrap gap-4 pt-2">
                     <Button
                       asChild
                       size="lg"
-                      className="relative px-8 py-6 text-sm font-medium bg-gradient-to-r from-[#03005F] to-indigo-600 text-white hover:shadow-2xl hover:shadow-[#03005F]/40 transition-all duration-300 overflow-hidden group rounded-xl"
+                      className="relative px-8 py-6 text-sm font-medium bg-gradient-to-r from-[#0B1440] to-indigo-600 text-white hover:shadow-2xl hover:shadow-[#0B1440]/40 transition-all duration-300 overflow-hidden group rounded-xl"
                     >
                       <Link href="/services" className="flex items-center gap-3">
                         <span className="relative z-10 flex items-center gap-3">
-                         
+
                           Explore Services
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition" />
                         </span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#03005F] to-purple-700 opacity-0 group-hover:opacity-100 transition" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1440] to-indigo-800 opacity-0 group-hover:opacity-100 transition" />
                       </Link>
                     </Button>
 
                     <Button
                       asChild
                       size="lg"
-                      className="px-8 py-6 text-sm font-medium border border-white/10 bg-white/5 text-white hover:bg-white/10 backdrop-blur-xl transition-all duration-300 rounded-xl group"
+                      className="px-8 py-6 text-sm font-medium border border-[#0B1440]/15 bg-white/85 text-[#0B1440] hover:bg-white backdrop-blur-xl transition-all duration-300 rounded-xl group"
                     >
                       <Link href="/courses">
                         <GraduationCap className="w-4 h-4 mr-3 group-hover:scale-110 transition" />
@@ -258,12 +258,12 @@ export default function HomePage() {
             {/* RIGHT - FULL SIZE IMAGE - Takes entire right half */}
             <div className="relative h-[100vh] md:h-[100vh] flex items-center justify-center overflow-hidden">
               {/* Central Glow behind image */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#03005F]/30 via-indigo-500/20 to-purple-500/30 blur-3xl animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-[#0B1440]/20 blur-3xl animate-pulse" />
 
               {/* Image Container - Full height and width */}
               <div className="relative w-full h-full">
                 {/* Glow overlay on image */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-indigo-500/20 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1440]/40 via-transparent to-transparent z-10" />
 
                 {/* The Image - Full size */}
                 <Image
@@ -277,38 +277,37 @@ export default function HomePage() {
 
                 {/* Scanning line effect */}
                 <div className="absolute inset-0 z-20 pointer-events-none">
-                  <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#03005F] to-transparent animate-scan" />
+                  <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#0B1440] to-transparent animate-scan" />
                 </div>
 
                 {/* Corner accents - Futuristic frame */}
-                <div className="absolute top-0 left-0 w-16 h-16 border-t-3 border-l-3 border-[#03005F]/50 z-30" />
-                <div className="absolute top-0 right-0 w-16 h-16 border-t-3 border-r-3 border-[#03005F]/50 z-30" />
-                <div className="absolute bottom-0 left-0 w-16 h-16 border-b-3 border-l-3 border-[#03005F]/50 z-30" />
-                <div className="absolute bottom-0 right-0 w-16 h-16 border-b-3 border-r-3 border-[#03005F]/50 z-30" />
+                <div className="absolute top-0 left-0 w-16 h-16 border-t-3 border-l-3 border-[#0B1440]/50 z-30" />
+                <div className="absolute top-0 right-0 w-16 h-16 border-t-3 border-r-3 border-[#0B1440]/50 z-30" />
+                <div className="absolute bottom-0 left-0 w-16 h-16 border-b-3 border-l-3 border-[#0B1440]/50 z-30" />
+                <div className="absolute bottom-0 right-0 w-16 h-16 border-b-3 border-r-3 border-[#0B1440]/50 z-30" />
 
                 {/* Glowing edge lines */}
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#03005F] to-transparent z-30 opacity-50" />
-                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#03005F] to-transparent z-30 opacity-50" />
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0B1440] to-transparent z-30 opacity-50" />
+                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0B1440] to-transparent z-30 opacity-50" />
               </div>
 
               {/* Orbiting Tech Tags - Positioned over the image */}
-              {/* Orbiting Tech Tags - Positioned over the image with better visibility */}
-              <div className="absolute top-2 right-2 px-4 py-2 rounded-full border border-white/20 bg-black/90 backdrop-blur-xl text-xs text-white/60 font-mono tracking-wider animate-pulse z-40 shadow-lg shadow-[#03005F]/20">
+              <div className="absolute top-2 right-2 px-4 py-2 rounded-full border border-white/20 bg-[#0B1440]/90 backdrop-blur-xl text-xs text-white/70 font-mono tracking-wider animate-pulse z-40 shadow-lg shadow-[#0B1440]/20">
                 AI · ML
               </div>
-              <div className="absolute bottom-2 left-2 px-4 py-2 rounded-full border border-white/20 bg-black/90 backdrop-blur-xl text-xs text-white/60 font-mono tracking-wider animate-pulse delay-500 z-40 shadow-lg shadow-[#03005F]/20">
+              <div className="absolute bottom-2 left-2 px-4 py-2 rounded-full border border-white/20 bg-[#0B1440]/90 backdrop-blur-xl text-xs text-white/70 font-mono tracking-wider animate-pulse delay-500 z-40 shadow-lg shadow-[#0B1440]/20">
                 MERN · React · Python
               </div>
-              <div className="absolute top-[15%] right-6 px-3 py-1.5 rounded-full border border-white/10 bg-black/90 backdrop-blur-xl text-[10px] text-white/40 font-mono tracking-wider animate-pulse delay-300 z-40 shadow-lg shadow-[#03005F]/10">
+              <div className="absolute top-[15%] right-6 px-3 py-1.5 rounded-full border border-white/10 bg-[#0B1440]/90 backdrop-blur-xl text-[10px] text-white/50 font-mono tracking-wider animate-pulse delay-300 z-40 shadow-lg shadow-[#0B1440]/10">
                 ✦ ACADEMY
               </div>
-              <div className="absolute bottom-[15%] left-6 px-3 py-1.5 rounded-full border border-white/10 bg-black/90 backdrop-blur-xl text-[10px] text-white/40 font-mono tracking-wider animate-pulse delay-700 z-40 shadow-lg shadow-[#03005F]/10">
+              <div className="absolute bottom-[15%] left-6 px-3 py-1.5 rounded-full border border-white/10 bg-[#0B1440]/90 backdrop-blur-xl text-[10px] text-white/50 font-mono tracking-wider animate-pulse delay-700 z-40 shadow-lg shadow-[#0B1440]/10">
                 ✦ LABS
               </div>
-              <div className="absolute top-[45%] right-10 px-3 py-1.5 rounded-full border border-white/5 bg-black/90 backdrop-blur-xl text-[10px] text-white/30 font-mono tracking-wider animate-pulse delay-500 z-40">
+              <div className="absolute top-[45%] right-10 px-3 py-1.5 rounded-full border border-white/10 bg-[#0B1440]/90 backdrop-blur-xl text-[10px] text-white/40 font-mono tracking-wider animate-pulse delay-500 z-40">
                 ⚡ AI AUTOMATION
               </div>
-              <div className="absolute bottom-[45%] left-10 px-3 py-1.5 rounded-full border border-white/5 bg-black/90 backdrop-blur-xl text-[10px] text-white/30 font-mono tracking-wider animate-pulse delay-300 z-40">
+              <div className="absolute bottom-[45%] left-10 px-3 py-1.5 rounded-full border border-white/10 bg-[#0B1440]/90 backdrop-blur-xl text-[10px] text-white/40 font-mono tracking-wider animate-pulse delay-300 z-40">
                 🚀 INNOVATION
               </div>
             </div>
@@ -316,11 +315,22 @@ export default function HomePage() {
         </div>
       </section>
 
-    {/* ========== FEATURED PRODUCT: TINZWAVE AI INTERVIEWER ========== */}
-    <section className="relative py-32 overflow-hidden bg-gradient-to-b from-black via-indigo-950/10 to-black border-y border-white/5">
+    {/* ========== FEATURED PRODUCT: TINZWAVE AI INTERVIEWER (image bg) ========== */}
+    <section className="relative py-32 overflow-hidden border-y border-white/10">
+      {/* Background photo + brand-navy overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="/man-wearing-vr-headset-smart-technology.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1440]/90 via-[#0B1440]/80 to-[#080F30]/95" />
+      </div>
+
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#03005F]/20 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#22B4F5]/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -329,21 +339,21 @@ export default function HomePage() {
           {/* LEFT - Explanation & CTA */}
           <Reveal>
             <div className="space-y-8">
-              <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 backdrop-blur-xl">
-                <Sparkles className="w-4 h-4 text-indigo-300" />
-                <span className="text-xs font-mono tracking-[0.2em] text-indigo-300">
+              <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/15 bg-white/10 backdrop-blur-xl">
+                <Sparkles className="w-4 h-4 text-[#78E1FF]" />
+                <span className="text-xs font-mono tracking-[0.2em] text-white">
                   A PRODUCT BY TINZWAVE
                 </span>
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight text-white">
                 Meet Tinzwave{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400">
+                <span className="text-[#78E1FF]">
                   AI Interviewer
                 </span>
               </h2>
 
-              <p className="text-lg text-white/60 leading-relaxed font-light">
+              <p className="text-lg text-white/70 leading-relaxed font-light">
                 Our first AI SaaS product, built by Tinzwave Labs. It's a live AI-powered
                 interview coach that lets job seekers practice real interviews on video,
                 get instant feedback on clarity, confidence, and technical depth, and walk
@@ -359,10 +369,10 @@ export default function HomePage() {
                   { icon: MessageSquareText, text: "Detailed feedback reports" },
                 ].map((f, idx) => (
                   <div key={idx} className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-indigo-500/10 border border-indigo-400/20 flex items-center justify-center flex-shrink-0">
-                      <f.icon className="w-4 h-4 text-indigo-300" />
+                    <div className="w-9 h-9 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0">
+                      <f.icon className="w-4 h-4 text-[#78E1FF]" />
                     </div>
-                    <span className="text-sm text-white/60">{f.text}</span>
+                    <span className="text-sm text-white/70">{f.text}</span>
                   </div>
                 ))}
               </div>
@@ -371,18 +381,18 @@ export default function HomePage() {
               <div className="flex flex-wrap items-center gap-6 pt-2">
                 <div className="flex items-center gap-2">
                   <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                  <span className="text-sm text-white/70 font-medium">4.9/5</span>
-                  <span className="text-sm text-white/40">from 2,000+ users</span>
+                  <span className="text-sm text-white font-medium">4.9/5</span>
+                  <span className="text-sm text-white/50">from 2,000+ users</span>
                 </div>
-                <div className="w-px h-4 bg-white/10" />
-                <span className="text-sm text-white/40">10,000+ interviews practiced</span>
+                <div className="w-px h-4 bg-white/15" />
+                <span className="text-sm text-white/50">10,000+ interviews practiced</span>
               </div>
 
               <div className="flex flex-wrap gap-4 pt-2">
                 <Button
                   asChild
                   size="lg"
-                  className="relative px-8 py-6 text-sm font-medium bg-gradient-to-r from-[#03005F] to-indigo-600 text-white hover:shadow-2xl hover:shadow-indigo-500/40 transition-all duration-300 overflow-hidden group rounded-xl"
+                  className="relative px-8 py-6 text-sm font-medium bg-gradient-to-r from-[#22B4F5] to-[#0A7FD1] text-white hover:shadow-2xl hover:shadow-[#22B4F5]/40 transition-all duration-300 overflow-hidden group rounded-xl"
                 >
                   <a href={AI_INTERVIEWER_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                     <span className="relative z-10 flex items-center gap-3">
@@ -395,7 +405,7 @@ export default function HomePage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="px-8 py-6 text-sm font-medium border border-white/10 bg-white/5 text-white hover:bg-white/10 backdrop-blur-xl transition-all duration-300 rounded-xl"
+                  className="px-8 py-6 text-sm font-medium border border-white/20 bg-white/10 text-white hover:bg-white/20 backdrop-blur-xl transition-all duration-300 rounded-xl"
                 >
                   <a href={AI_INTERVIEWER_URL} target="_blank" rel="noopener noreferrer">
                     Visit interviewai.tinzwave.com
@@ -405,11 +415,11 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          {/* RIGHT - Visual mock preview */}
+          {/* RIGHT - Visual mock preview (kept as a dark product-screenshot card, like a real UI) */}
           <Reveal>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 via-transparent to-purple-500/20 blur-3xl" />
-              <div className="relative rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl overflow-hidden shadow-2xl shadow-indigo-500/10">
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-white/10 blur-3xl" />
+              <div className="relative rounded-2xl border border-white/10 bg-[#0B1440]/95 backdrop-blur-xl overflow-hidden shadow-2xl shadow-[#080F30]/40">
                 {/* Fake browser chrome */}
                 <div className="flex items-center gap-2 px-5 py-3 border-b border-white/5 bg-white/[0.02]">
                   <span className="w-3 h-3 rounded-full bg-red-500/60" />
@@ -432,7 +442,7 @@ export default function HomePage() {
 
                   <div className="rounded-xl bg-gradient-to-br from-indigo-500/10 to-purple-500/5 border border-white/5 p-6 space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#03005F] to-indigo-500 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#0B1440] to-indigo-500 flex items-center justify-center">
                         <Bot className="w-5 h-5 text-white" />
                       </div>
                       <div>
@@ -465,33 +475,33 @@ export default function HomePage() {
       </div>
     </section>
 
-    {/* ========== THREE DIVISIONS - PREMIUM REDESIGN ========== */}
-<section className="relative py-40 overflow-hidden bg-gradient-to-b from-black via-[#03005F]/10 to-black">
+    {/* ========== THREE DIVISIONS ========== */}
+<section className="relative py-40 overflow-hidden bg-gradient-to-b from-[#4FD2FF] via-[#22B4F5] to-[#0D96E8]">
   <div className="absolute inset-0">
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-[#03005F]/10 rounded-full blur-3xl animate-pulse" />
-    <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
-    <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000" />
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-white/10 rounded-full blur-3xl animate-pulse" />
+    <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-white/10 rounded-full blur-3xl animate-pulse delay-1000" />
+    <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#0B1440]/5 rounded-full blur-3xl animate-pulse delay-2000" />
   </div>
 
   <div className="container mx-auto px-4 relative z-10">
-    {/* Section Header - Enhanced */}
+    {/* Section Header */}
     <div className="text-center max-w-4xl mx-auto mb-20">
-      <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-[#03005F]/30 bg-[#03005F]/10 backdrop-blur-xl mb-6">
-        <span className="w-2 h-2 bg-[#03005F] rounded-full animate-pulse shadow-lg shadow-[#03005F]/50" />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#03005F] via-indigo-400 to-purple-400 font-mono text-xs tracking-[0.2em]">
+      <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/10 bg-[#0B1440]/90 backdrop-blur-xl mb-6">
+        <span className="w-2 h-2 bg-[#78E1FF] rounded-full animate-pulse shadow-lg shadow-[#78E1FF]/50" />
+        <span className="text-white font-mono text-xs tracking-[0.2em]">
           ⚡ OUR ECOSYSTEM
         </span>
-        <span className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse shadow-lg shadow-indigo-500/50" />
+        <span className="w-2 h-2 bg-white rounded-full animate-pulse shadow-lg shadow-white/50" />
       </div>
-      
+
       <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
-        <span className="text-white">Three Divisions,</span>
-        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#03005F] via-indigo-400 to-purple-400 animate-gradient">
+        <span className="text-[#0B1440]">Three Divisions,</span>
+        <span className="block text-white">
           One Unified Mission
         </span>
       </h2>
-      
-      <p className="mt-6 text-xl text-white/60 leading-relaxed font-light max-w-2xl mx-auto">
+
+      <p className="mt-6 text-xl text-[#0B1440]/70 leading-relaxed font-light max-w-2xl mx-auto">
         We bridge the gap between technology and real-world impact through education, innovation, and collaboration.
       </p>
     </div>
@@ -510,18 +520,18 @@ export default function HomePage() {
 
         return (
           <Link key={i} href={item.href} className="group">
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/[0.07] to-transparent backdrop-blur-sm hover:bg-white/[0.10] transition-all duration-700 hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#03005F]/30 h-full">
-              
+            <div className="relative rounded-2xl overflow-hidden border border-white/40 bg-white/95 backdrop-blur-sm hover:bg-white transition-all duration-700 hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#080F30]/30 h-full">
+
               {/* Premium gradient overlay on hover */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-10 transition duration-700`} />
-              
+
               {/* Glow border on hover */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-20 blur-xl transition duration-700 pointer-events-none`} />
 
               {/* Image Section - Top of card */}
-              <div className="relative w-full h-56 overflow-hidden bg-gradient-to-b from-[#03005F]/20 to-black/80">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
-                
+              <div className="relative w-full h-56 overflow-hidden bg-gradient-to-b from-[#0B1440]/20 to-[#080F30]">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080F30]/80 via-transparent to-transparent z-10" />
+
                 {/* Image Placeholder */}
                 <div className="relative w-full h-full">
                   <Image
@@ -531,31 +541,31 @@ export default function HomePage() {
                     className="object-cover object-center group-hover:scale-110 transition duration-700"
                   />
                   {/* Fallback if image not found - shows icon */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-[#03005F]/5">
-                    <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-2xl shadow-[#03005F]/30`}>
+                  <div className="absolute inset-0 flex items-center justify-center bg-[#0B1440]/5">
+                    <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-2xl shadow-[#0B1440]/30`}>
                       <Icon className="w-10 h-10 text-white" />
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Category Badge - Overlay on image */}
-                <div className="absolute top-4 left-4 z-20 px-4 py-1.5 rounded-full border border-white/20 bg-black/70 backdrop-blur-xl text-xs font-medium text-white/80 font-mono tracking-wider">
+                <div className="absolute top-4 left-4 z-20 px-4 py-1.5 rounded-full border border-white/20 bg-[#0B1440]/80 backdrop-blur-xl text-xs font-medium text-white/90 font-mono tracking-wider">
                   {item.badge}
                 </div>
-                
+
                 {/* Stat overlay on image */}
-                <div className="absolute bottom-4 right-4 z-20 px-3 py-1.5 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl text-xs text-white/40 font-mono">
+                <div className="absolute bottom-4 right-4 z-20 px-3 py-1.5 rounded-full border border-white/10 bg-[#0B1440]/70 backdrop-blur-xl text-xs text-white/60 font-mono">
                   {item.stat}
                 </div>
               </div>
 
               {/* Content Section */}
               <div className="relative p-8 pt-6 flex flex-col">
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-indigo-300 transition duration-500">
+                <h3 className="text-2xl font-bold text-[#0B1440] mb-3 group-hover:text-[#0A7FD1] transition duration-500">
                   {item.title}
                 </h3>
 
-                <p className="text-sm text-white/50 leading-relaxed flex-1">
+                <p className="text-sm text-[#0B1440]/60 leading-relaxed flex-1">
                   {item.description}
                 </p>
 
@@ -564,20 +574,20 @@ export default function HomePage() {
                   {item.features.map((feature, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 rounded-full border border-white/5 bg-white/5 text-[10px] text-white/30 font-mono hover:text-white/60 hover:border-white/20 transition"
+                      className="px-3 py-1 rounded-full border border-[#0B1440]/10 bg-[#0B1440]/5 text-[10px] text-[#0B1440]/50 font-mono hover:text-[#0B1440]/90 hover:border-[#0B1440]/25 transition"
                     >
                       {feature}
                     </span>
                   ))}
                 </div>
 
-                {/* Explore Link - Enhanced */}
-                <div className="mt-6 flex items-center gap-3 text-[#03005F] font-mono text-xs tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:gap-4">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#03005F] to-indigo-400 font-semibold">
+                {/* Explore Link */}
+                <div className="mt-6 flex items-center gap-3 text-[#0B1440] font-mono text-xs tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:gap-4">
+                  <span className="text-[#0B1440] font-semibold">
                     EXPLORE DIVISION
                   </span>
-                  <div className="w-8 h-[1px] bg-gradient-to-r from-[#03005F] to-indigo-400" />
-                  <ChevronRight className="w-4 h-4 text-[#03005F] group-hover:translate-x-2 transition-transform duration-300" />
+                  <div className="w-8 h-[1px] bg-[#0B1440]/40" />
+                  <ChevronRight className="w-4 h-4 text-[#0B1440] group-hover:translate-x-2 transition-transform duration-300" />
                 </div>
               </div>
             </div>
@@ -591,12 +601,12 @@ export default function HomePage() {
       <Button
         asChild
         size="lg"
-        className="relative px-12 py-7 text-base font-medium bg-gradient-to-r from-[#03005F] via-indigo-600 to-[#03005F] text-white hover:shadow-2xl hover:shadow-[#03005F]/50 transition-all duration-500 overflow-hidden group rounded-2xl"
+        className="relative px-12 py-7 text-base font-medium bg-gradient-to-r from-[#0B1440] via-indigo-600 to-[#0B1440] text-white hover:shadow-2xl hover:shadow-[#0B1440]/50 transition-all duration-500 overflow-hidden group rounded-2xl"
       >
         <Link href="/about" className="flex items-center gap-3">
           <span className="relative z-10">Learn More About Our Ecosystem</span>
           <CircuitBoard className="w-5 h-5 relative z-10 group-hover:rotate-90 transition duration-500" />
-          <span className="absolute inset-0 bg-gradient-to-r from-[#03005F] to-purple-700 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
+          <span className="absolute inset-0 bg-gradient-to-r from-[#0B1440] to-purple-700 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
         </Link>
       </Button>
     </div>

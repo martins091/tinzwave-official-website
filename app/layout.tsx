@@ -107,8 +107,8 @@ export default function RootLayout({
             }),
           }}
         />
-        <meta name="theme-color" content="#020617" />
-        <meta name="msapplication-TileColor" content="#020617" />
+        <meta name="theme-color" content="#0B1440" />
+        <meta name="msapplication-TileColor" content="#0B1440" />
       </head>
       <body className={`font-sans antialiased`}>
         {children}

@@ -17,27 +17,27 @@ export default function AIAutomationsPage() {
     <div className="min-h-screen">
       <Navigation />
 
-      <section className="bg-primary text-primary-foreground py-20">
+      <section className="bg-gradient-to-b from-[#4FD2FF] via-[#22B4F5] to-[#0A7FD1] text-[#0B1440] py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-primary/20 text-primary-foreground border-0">
+            <Badge className="mb-6 bg-[#0B1440]/90 text-white border-0">
               AI Automations
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B1440]">
               AI Automations — Optimize workflows with AI
             </h1>
-            <p className="text-lg text-primary-foreground/90 mb-6">
+            <p className="text-lg text-[#0B1440]/75 mb-6">
               We design and deploy AI-powered automations to reduce manual work,
               speed processes, and unlock new insights for your business.
             </p>
 
             <div className="flex justify-center gap-4">
-              <Button asChild className="bg-primary text-primary-foreground">
+              <Button asChild className="bg-[#0B1440] text-white hover:bg-[#0B1440]/90">
                 <Link href="/contact">Get Started</Link>
               </Button>
               <Button
                 asChild
-                className="border border-primary text-primary bg-transparent"
+                className="border border-[#0B1440]/30 text-[#0B1440] bg-white/70 hover:bg-white"
               >
                 <Link href="/services">View Services</Link>
               </Button>
@@ -79,9 +79,9 @@ export default function AIAutomationsPage() {
               with measurable KPIs.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-6 bg-white/5 rounded-lg">Discovery</div>
-              <div className="p-6 bg-white/5 rounded-lg">Prototype & Pilot</div>
-              <div className="p-6 bg-white/5 rounded-lg">
+              <div className="p-6 bg-[#0B1440]/5 border border-[#0B1440]/10 rounded-lg text-[#0B1440] font-medium">Discovery</div>
+              <div className="p-6 bg-[#0B1440]/5 border border-[#0B1440]/10 rounded-lg text-[#0B1440] font-medium">Prototype & Pilot</div>
+              <div className="p-6 bg-[#0B1440]/5 border border-[#0B1440]/10 rounded-lg text-[#0B1440] font-medium">
                 Production & Monitoring
               </div>
             </div>

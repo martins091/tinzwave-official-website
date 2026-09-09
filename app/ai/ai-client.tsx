@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function AIPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-[#0B1440]">
 
       <Navigation />
 
@@ -26,24 +26,24 @@ export default function AIPage() {
       className="object-cover scale-110"
     />
 
-    {/* soft cinematic darkening (NOT heavy) */}
-    <div className="absolute inset-0 bg-black/40" />
+    {/* navy cinematic darkening */}
+    <div className="absolute inset-0 bg-[#0B1440]/80" />
   </div>
 
   {/* FLOATING AI LIGHT LAYERS */}
   <div className="absolute inset-0 z-10">
 
     {/* main brand glow */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(3,0,95,0.35),transparent_55%)]" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(11,20,64,0.35),transparent_55%)]" />
 
     {/* secondary futuristic energy */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_70%,rgba(99,102,241,0.18),transparent_60%)]" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_70%,rgba(34,180,245,0.20),transparent_60%)]" />
 
-    {/* subtle tech green accent */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(16,185,129,0.12),transparent_65%)]" />
+    {/* glow orb accent */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(120,225,255,0.15),transparent_65%)]" />
 
     {/* vignette for premium depth */}
-    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70" />
+    <div className="absolute inset-0 bg-gradient-to-b from-[#080F30]/60 via-transparent to-[#080F30]/75" />
 
   </div>
 
@@ -52,7 +52,7 @@ export default function AIPage() {
 
     {/* SMALL AI TAG */}
     <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
-      <span className="w-2 h-2 rounded-full bg-[#03005F] animate-pulse" />
+      <span className="w-2 h-2 rounded-full bg-[#78E1FF] animate-pulse" />
       <p className="text-white/70 text-sm tracking-wide">
         TinzWave AI Ecosystem
       </p>
@@ -61,7 +61,7 @@ export default function AIPage() {
     {/* MAIN HEADLINE */}
     <h1 className="text-5xl md:text-7xl font-semibold text-white leading-tight tracking-tight">
       Intelligence for the
-      <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-300 to-[#03005F]">
+      <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-[#78E1FF] to-[#4FD2FF]">
         Next Generation
       </span>
     </h1>
@@ -75,7 +75,7 @@ export default function AIPage() {
     <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
 
       {/* FIRST BUTTON - Our AI Services */}
-      <Button asChild className="bg-[#03005F] hover:bg-[#03005F]/90 text-white px-8 py-6 text-sm shadow-lg shadow-[#03005F]/30">
+      <Button asChild className="bg-gradient-to-r from-[#22B4F5] to-[#0A7FD1] hover:shadow-2xl hover:shadow-[#22B4F5]/40 text-white px-8 py-6 text-sm shadow-lg shadow-[#0A7FD1]/30">
         <Link href="/ai/ai-services">
           Our AI Services
         </Link>
@@ -103,39 +103,40 @@ export default function AIPage() {
 </section>
 
     {/* OVERVIEW */}
-<section className="py-28 px-6 max-w-6xl mx-auto">
+<section className="py-28 px-6 bg-gradient-to-b from-[#4FD2FF] via-[#22B4F5] to-[#0D96E8]">
+<div className="max-w-6xl mx-auto">
 
   {/* SECTION TITLE */}
   <div className="text-center mb-12">
 
-    <div className="w-16 h-[2px] bg-[#03005F] mx-auto mb-5" />
+    <div className="w-16 h-[2px] bg-[#0B1440] mx-auto mb-5" />
 
-    <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+    <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-[#0B1440]">
       The TinzWave AI Ecosystem
     </h2>
 
-    <p className="text-white/40 mt-4 max-w-2xl mx-auto">
+    <p className="text-[#0B1440]/60 mt-4 max-w-2xl mx-auto">
       A unified system where intelligence meets execution.
     </p>
 
   </div>
 
   {/* CONTENT CARD */}
-  <div className="relative p-10 md:p-14 rounded-3xl border border-white/10 bg-white/5 shadow-sm overflow-hidden">
+  <div className="relative p-10 md:p-14 rounded-3xl border border-white/40 bg-white/90 shadow-xl shadow-[#080F30]/10 overflow-hidden">
 
     {/* subtle brand glow */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(3,0,95,0.06),transparent_60%)]" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(99,102,241,0.05),transparent_60%)]" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(11,20,64,0.05),transparent_60%)]" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(34,180,245,0.06),transparent_60%)]" />
 
     <div className="relative">
 
-      <p className="text-white/70 text-lg leading-relaxed">
-        <span className="font-medium text-indigo-400">TinzWave AI</span> is the artificial intelligence division of TinzWave Technologies.
+      <p className="text-[#0B1440]/75 text-lg leading-relaxed">
+        <span className="font-medium text-[#0A7FD1]">TinzWave AI</span> is the artificial intelligence division of TinzWave Technologies.
         It is designed as a dual ecosystem that merges <strong>AI-powered business solutions</strong> with a
         <strong> practical training academy</strong> built for real-world execution.
       </p>
 
-      <p className="mt-6 text-white/50 leading-relaxed">
+      <p className="mt-6 text-[#0B1440]/60 leading-relaxed">
         Rather than just teaching or building in isolation, TinzWave AI connects both worlds —
         enabling businesses to automate and scale, while equipping individuals with the skills
         to build, create, and deploy AI systems that generate real impact.
@@ -144,20 +145,20 @@ export default function AIPage() {
       {/* KEY HIGHLIGHTS */}
       <div className="mt-10 grid md:grid-cols-2 gap-6">
 
-        <div className="p-6 rounded-2xl border border-white/10 bg-white/5">
-          <h3 className="font-semibold text-indigo-400 mb-2">
+        <div className="p-6 rounded-2xl border border-[#0B1440]/10 bg-[#0B1440]/5">
+          <h3 className="font-semibold text-[#0A7FD1] mb-2">
             AI Business Solutions
           </h3>
-          <p className="text-sm text-white/50">
+          <p className="text-sm text-[#0B1440]/60">
             Helping companies build intelligent systems, automate workflows, and transform operations into scalable digital infrastructure.
           </p>
         </div>
 
-        <div className="p-6 rounded-2xl border border-white/10 bg-white/5">
-          <h3 className="font-semibold text-indigo-400 mb-2">
+        <div className="p-6 rounded-2xl border border-[#0B1440]/10 bg-[#0B1440]/5">
+          <h3 className="font-semibold text-[#0A7FD1] mb-2">
             AI Training Academy
           </h3>
-          <p className="text-sm text-white/50">
+          <p className="text-sm text-[#0B1440]/60">
             A hands-on learning ecosystem that turns beginners into builders through real-world AI projects and practical execution.
           </p>
         </div>
@@ -167,21 +168,23 @@ export default function AIPage() {
     </div>
 
   </div>
+</div>
 </section>
 
    {/* CORE DIVISIONS */}
-<section className="py-28 px-6 max-w-6xl mx-auto">
+<section className="py-28 px-6 bg-gradient-to-b from-[#0D96E8] via-[#22B4F5] to-[#4FD2FF]">
+<div className="max-w-6xl mx-auto">
 
   {/* HEADER */}
   <div className="text-center mb-14">
 
-    <div className="w-16 h-[2px] bg-[#03005F] mx-auto mb-5" />
+    <div className="w-16 h-[2px] bg-[#0B1440] mx-auto mb-5" />
 
-    <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+    <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-[#0B1440]">
       Core Divisions
     </h2>
 
-    <p className="text-white/40 mt-4 max-w-2xl mx-auto">
+    <p className="text-[#0B1440]/60 mt-4 max-w-2xl mx-auto">
       Two powerful systems working together — building AI solutions and building AI builders.
     </p>
 
@@ -191,24 +194,24 @@ export default function AIPage() {
   <div className="grid md:grid-cols-2 gap-10">
 
     {/* BUSINESS SOLUTIONS */}
-    <div className="group relative p-10 rounded-3xl border border-white/10 bg-white/5 overflow-hidden transition-all hover:shadow-xl hover:shadow-[#03005F]/20 hover:-translate-y-1">
+    <div className="group relative p-10 rounded-3xl border border-white/40 bg-white/90 overflow-hidden transition-all hover:shadow-xl hover:shadow-[#080F30]/20 hover:-translate-y-1">
 
       {/* glow effect */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[radial-gradient(circle_at_30%_20%,rgba(3,0,95,0.08),transparent_60%)]" />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[radial-gradient(circle_at_30%_20%,rgba(11,20,64,0.06),transparent_60%)]" />
 
       {/* ICON */}
-      <Building2 className="h-9 w-9 text-indigo-400 relative z-10" />
+      <Building2 className="h-9 w-9 text-[#0A7FD1] relative z-10" />
 
-      <h3 className="text-2xl font-semibold mt-5 relative z-10">
+      <h3 className="text-2xl font-semibold mt-5 relative z-10 text-[#0B1440]">
         AI Business Solutions
       </h3>
 
-      <p className="text-white/50 mt-3 relative z-10 leading-relaxed">
+      <p className="text-[#0B1440]/60 mt-3 relative z-10 leading-relaxed">
         We help companies build AI systems, automate workflows, and upgrade their operations into intelligent systems.
       </p>
 
       {/* LIST */}
-      <ul className="mt-6 space-y-2 text-sm text-white/50 relative z-10">
+      <ul className="mt-6 space-y-2 text-sm text-[#0B1440]/60 relative z-10">
         <li>• AI Software Development (Web, Apps, SaaS)</li>
         <li>• Business Automation Systems</li>
         <li>• AI Integration Services</li>
@@ -218,7 +221,7 @@ export default function AIPage() {
       {/* CTA */}
       <Link
         href="/ai/ai-services"
-        className="mt-8 inline-flex items-center font-medium text-indigo-400 relative z-10 group"
+        className="mt-8 inline-flex items-center font-medium text-[#0A7FD1] relative z-10 group"
       >
         View Details
         <ArrowRight className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
@@ -227,24 +230,24 @@ export default function AIPage() {
     </div>
 
     {/* ACADEMY */}
-    <div className="group relative p-10 rounded-3xl border border-white/10 bg-white/5 overflow-hidden transition-all hover:shadow-xl hover:shadow-[#03005F]/20 hover:-translate-y-1">
+    <div className="group relative p-10 rounded-3xl border border-white/40 bg-white/90 overflow-hidden transition-all hover:shadow-xl hover:shadow-[#080F30]/20 hover:-translate-y-1">
 
       {/* glow effect */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[radial-gradient(circle_at_70%_30%,rgba(99,102,241,0.08),transparent_60%)]" />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-[radial-gradient(circle_at_70%_30%,rgba(34,180,245,0.08),transparent_60%)]" />
 
       {/* ICON */}
-      <GraduationCap className="h-9 w-9 text-indigo-400 relative z-10" />
+      <GraduationCap className="h-9 w-9 text-[#0A7FD1] relative z-10" />
 
-      <h3 className="text-2xl font-semibold mt-5 relative z-10">
+      <h3 className="text-2xl font-semibold mt-5 relative z-10 text-[#0B1440]">
         AI Academy
       </h3>
 
-      <p className="text-white/50 mt-3 relative z-10 leading-relaxed">
+      <p className="text-[#0B1440]/60 mt-3 relative z-10 leading-relaxed">
         A practical training system where learners build real-world AI skills and income-ready digital abilities.
       </p>
 
       {/* LIST */}
-      <ul className="mt-6 space-y-2 text-sm text-white/50 relative z-10">
+      <ul className="mt-6 space-y-2 text-sm text-[#0B1440]/60 relative z-10">
         <li>• AI Software & Startup Building</li>
         <li>• AI Content Creation & Monetization</li>
         <li>• AI Design & Branding</li>
@@ -254,7 +257,7 @@ export default function AIPage() {
       {/* CTA */}
       <Link
         href="/ai/ai-courses"
-        className="mt-8 inline-flex items-center font-medium text-indigo-400 relative z-10 group"
+        className="mt-8 inline-flex items-center font-medium text-[#0A7FD1] relative z-10 group"
       >
         View Details
         <ArrowRight className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
@@ -263,6 +266,7 @@ export default function AIPage() {
     </div>
 
   </div>
+</div>
 </section>
 
       <Footer />

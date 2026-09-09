@@ -207,7 +207,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-[#0B1440]">
       <Navigation />
 
       {/* ========== HERO - Full Width Image Background ========== */}
@@ -221,34 +221,34 @@ export default function ServicesPage() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1440]/95 via-[#0B1440]/85 to-[#080F30]/80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080F30]/60 via-transparent to-[#0B1440]/40" />
         </div>
-        
+
         {/* Floating particles */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 w-[500px] h-[500px] animate-[spin_25s_linear_infinite]" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5 w-[700px] h-[700px] animate-[spin_30s_linear_infinite_reverse]" />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/20 bg-black/50 backdrop-blur-xl mb-8">
-              <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-lg shadow-white/20" />
-              <span className="text-white/80 font-mono text-xs tracking-[0.2em]">
+            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/15 bg-[#0B1440]/80 backdrop-blur-xl mb-8">
+              <span className="w-2 h-2 bg-[#78E1FF] rounded-full animate-pulse shadow-lg shadow-[#78E1FF]/40" />
+              <span className="text-white/90 font-mono text-xs tracking-[0.2em]">
                 ⚡ OUR SERVICES
               </span>
-              <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse shadow-lg shadow-white/20" />
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse shadow-lg shadow-white/30" />
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
               <span className="text-white">Our</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-300 to-purple-300 animate-gradient">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-[#78E1FF] to-[#22B4F5] animate-gradient">
                 Ecosystem Services
               </span>
             </h1>
-            
-            <p className="mt-6 text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl">
+
+            <p className="mt-6 text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl">
               Comprehensive technology solutions across our three divisions —
               Academy, Labs, and Workspace — designed to transform your business,
               institution, or career.
@@ -261,26 +261,30 @@ export default function ServicesPage() {
       {ecosystemData.map((ecosystem, idx) => (
         <section
           key={ecosystem.id}
-          className={`py-20 ${idx % 2 === 0 ? "bg-black" : "bg-gradient-to-b from-black via-white/5 to-black"}`}
+          className={`py-20 ${
+            idx % 2 === 0
+              ? "bg-gradient-to-b from-[#4FD2FF] via-[#22B4F5] to-[#0D96E8]"
+              : "bg-gradient-to-b from-[#22B4F5] via-[#0D96E8] to-[#0A7FD1]"
+          }`}
         >
           <div className="container mx-auto px-4">
             {/* Section Header */}
             <Reveal>
               <div className="max-w-4xl mx-auto mb-16">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${ecosystem.gradient} flex items-center justify-center shadow-lg shadow-indigo-500/20`}>
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${ecosystem.gradient} flex items-center justify-center shadow-lg shadow-[#0B1440]/20`}>
                     <ecosystem.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <Badge className="border border-white/20 bg-white/5 text-white/80 font-mono text-xs tracking-widest">
+                    <Badge className="border border-white/10 bg-[#0B1440]/90 text-white font-mono text-xs tracking-widest">
                       {ecosystem.badge}
                     </Badge>
                   </div>
                 </div>
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                <h2 className="text-3xl md:text-5xl font-bold text-[#0B1440] mb-4">
                   {ecosystem.title}
                 </h2>
-                <p className="text-white/50 text-lg leading-relaxed max-w-2xl">
+                <p className="text-[#0B1440]/65 text-lg leading-relaxed max-w-2xl">
                   {ecosystem.description}
                 </p>
               </div>
@@ -292,41 +296,41 @@ export default function ServicesPage() {
                 const Icon = service.icon;
                 return (
                   <Reveal key={index}>
-                    <div className="group relative p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10 h-full">
+                    <div className="group relative p-6 rounded-2xl border border-white/40 bg-white/90 backdrop-blur-sm hover:bg-white transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#080F30]/20 h-full">
                       <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${ecosystem.gradient} opacity-0 group-hover:opacity-10 transition duration-500`} />
-                      
+
                       <div className="relative flex flex-col h-full">
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${ecosystem.gradient} bg-opacity-20 flex items-center justify-center mb-4 group-hover:scale-110 transition`}>
+                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${ecosystem.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition shadow-md shadow-[#0B1440]/10`}>
                           <Icon className="w-6 h-6 text-white" />
                         </div>
-                        
-                        <h3 className="text-lg font-bold text-white mb-2">
+
+                        <h3 className="text-lg font-bold text-[#0B1440] mb-2">
                           {service.title}
                         </h3>
-                        
-                        <p className="text-sm text-white/50 leading-relaxed flex-1">
+
+                        <p className="text-sm text-[#0B1440]/60 leading-relaxed flex-1">
                           {service.description}
                         </p>
-                        
+
                         <div className="mt-4 flex flex-wrap gap-2">
                           {service.features.map((feature, idx) => (
                             <span
                               key={idx}
-                              className="px-2 py-1 rounded-full border border-white/5 bg-white/5 text-[10px] text-white/30 font-mono"
+                              className="px-2 py-1 rounded-full border border-[#0B1440]/10 bg-[#0B1440]/5 text-[10px] text-[#0B1440]/50 font-mono"
                             >
                               {feature}
                             </span>
                           ))}
                         </div>
-                        
+
                         <div className="mt-6">
                           <Link
                             href={`/${ecosystem.id}`}
-                            className="inline-flex items-center gap-2 text-sm font-medium text-white/60 hover:text-white transition group"
+                            className="inline-flex items-center gap-2 text-sm font-medium text-[#0B1440]/70 hover:text-[#0B1440] transition group"
                           >
                             <span className="relative">
                               Learn More
-                              <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-white group-hover:w-full transition-all duration-300" />
+                              <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-[#0B1440] group-hover:w-full transition-all duration-300" />
                             </span>
                             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition" />
                           </Link>
@@ -342,14 +346,14 @@ export default function ServicesPage() {
             <div className="mt-12 text-center">
               <Button
                 asChild
-                className="relative px-8 py-6 text-sm font-bold bg-gradient-to-r from-[#03005F] via-indigo-600 to-[#03005F] text-white hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-500 overflow-hidden group rounded-xl shadow-lg shadow-indigo-500/10"
+                className="relative px-8 py-6 text-sm font-bold bg-gradient-to-r from-[#0B1440] via-indigo-600 to-[#0B1440] text-white hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-500 overflow-hidden group rounded-xl shadow-lg shadow-indigo-500/10"
               >
                 <Link href={`/${ecosystem.id}`}>
                   <span className="relative z-10 flex items-center gap-2">
                     Explore {ecosystem.title}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
                   </span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#03005F] to-purple-700 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#0B1440] to-purple-700 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                 </Link>
               </Button>
             </div>

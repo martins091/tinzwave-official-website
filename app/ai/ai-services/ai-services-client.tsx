@@ -99,7 +99,7 @@ export default function AIServicesPage() {
       id: 4,
       title: "AI Consulting",
       icon: Briefcase,
-      gradient: "from-orange-600 to-red-600",
+      gradient: "from-indigo-600 to-[#0B1440]",
       description: "Expert guidance on AI strategy and business optimization.",
       features: [
         "Strategy & AI adoption planning",
@@ -125,43 +125,48 @@ export default function AIServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-[#0B1440]">
 
       <Navigation />
 
-      {/* SERVICES GRID */}
-      <section id="services" className="py-28 px-6">
-        <div className="max-w-7xl mx-auto">
+      {/* SERVICES GRID (bright brand gradient) */}
+      <section id="services" className="relative py-28 px-6 overflow-hidden bg-gradient-to-b from-[#4FD2FF] via-[#22B4F5] to-[#0D96E8]">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-white/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#0B1440]/5 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="w-16 h-[2px] bg-[#03005F] mx-auto mb-5" />
+            <div className="w-16 h-[2px] bg-[#0B1440] mx-auto mb-5" />
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-              Our <span className="text-indigo-400">AI Services</span>
+              <span className="text-[#0B1440]">Our </span><span className="text-white">AI Services</span>
             </h2>
-            <p className="text-white/40 mt-4 max-w-2xl mx-auto">
+            <p className="text-[#0B1440]/70 mt-4 max-w-2xl mx-auto">
               Comprehensive AI solutions tailored to your business needs
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service) => (
-              <Card key={service.id} className="group relative bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl">
+              <Card key={service.id} className="group relative bg-white/95 border border-white/40 hover:border-[#0A7FD1]/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl">
                 {/* Gradient Border Effect */}
                 <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-                
+
                 <div className="relative p-8">
                   <div className={`p-3 rounded-xl bg-gradient-to-br ${service.gradient} shadow-lg w-fit mb-5`}>
                     <service.icon className="w-6 h-6 text-white" />
                   </div>
 
-                  <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-white/50 mb-6">{service.description}</p>
+                  <h3 className="text-2xl font-bold text-[#0B1440] mb-3">{service.title}</h3>
+                  <p className="text-[#0B1440]/60 mb-6">{service.description}</p>
 
                   {/* Features */}
                   <div className="mb-6">
-                    <p className="text-indigo-400 text-sm font-semibold mb-3">WHAT WE OFFER:</p>
+                    <p className="text-[#0A7FD1] text-sm font-semibold mb-3">WHAT WE OFFER:</p>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm text-white/50">
+                        <li key={idx} className="flex items-center gap-2 text-sm text-[#0B1440]/60">
                           <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
@@ -172,15 +177,15 @@ export default function AIServicesPage() {
                   {/* Benefits */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {service.benefits.map((benefit, idx) => (
-                      <span key={idx} className="text-xs px-2 py-1 rounded-full bg-[#03005F]/10 text-indigo-400">
+                      <span key={idx} className="text-xs px-2 py-1 rounded-full bg-[#0B1440]/5 text-[#0A7FD1]">
                         {benefit}
                       </span>
                     ))}
                   </div>
 
-                  <Button 
+                  <Button
                     onClick={() => handleServiceInquiry(service.title)}
-                    className="bg-[#03005F] hover:bg-[#03005F]/90 text-white w-full"
+                    className="bg-gradient-to-r from-[#0B1440] to-indigo-800 hover:shadow-lg hover:shadow-[#0B1440]/30 text-white w-full"
                   >
                     Inquire Now
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -192,23 +197,33 @@ export default function AIServicesPage() {
         </div>
       </section>
 
-      {/* INDUSTRIES WE SERVE */}
-      <section className="py-28 px-6 bg-white/5">
-        <div className="max-w-7xl mx-auto">
+      {/* INDUSTRIES WE SERVE (image bg) */}
+      <section className="relative py-28 px-6 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/ai-software-development-technology.jpg"
+            alt=""
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1440]/88 via-[#0B1440]/82 to-[#080F30]/92" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="w-16 h-[2px] bg-[#03005F] mx-auto mb-5" />
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-              Industries <span className="text-indigo-400">We Serve</span>
+            <div className="w-16 h-[2px] bg-[#78E1FF] mx-auto mb-5" />
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
+              Industries <span className="text-[#78E1FF]">We Serve</span>
             </h2>
-            <p className="text-white/40 mt-4 max-w-2xl mx-auto">
+            <p className="text-white/60 mt-4 max-w-2xl mx-auto">
               Tailored AI solutions for various industries
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {industries.map((industry, idx) => (
-              <div key={idx} className="text-center p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all hover:shadow-lg">
-                <industry.icon className="w-10 h-10 text-indigo-400 mx-auto mb-3" />
+              <div key={idx} className="text-center p-6 bg-white/10 rounded-2xl border border-white/15 hover:border-[#78E1FF]/40 transition-all hover:shadow-lg">
+                <industry.icon className="w-10 h-10 text-[#78E1FF] mx-auto mb-3" />
                 <h3 className="font-semibold text-white">{industry.name}</h3>
               </div>
             ))}
@@ -217,14 +232,18 @@ export default function AIServicesPage() {
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="py-28 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-28 px-6 overflow-hidden bg-gradient-to-b from-[#22B4F5] via-[#0D96E8] to-[#0A7FD1]">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl" />
+        </div>
+        <div className="relative max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="w-16 h-[2px] bg-[#03005F] mx-auto mb-5" />
+            <div className="w-16 h-[2px] bg-[#0B1440] mx-auto mb-5" />
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-              Why Choose <span className="text-indigo-400">TinzWave AI</span>
+              <span className="text-[#0B1440]">Why Choose </span><span className="text-white">TinzWave AI</span>
             </h2>
-            <p className="text-white/40 mt-4 max-w-2xl mx-auto">
+            <p className="text-[#0B1440]/70 mt-4 max-w-2xl mx-auto">
               We combine technical expertise with business acumen
             </p>
           </div>
@@ -262,10 +281,10 @@ export default function AIServicesPage() {
                 description: "Built to grow with your business from startup to enterprise."
               }
             ].map((item, idx) => (
-              <div key={idx} className="text-center p-6 rounded-2xl border border-white/10 bg-white/5 shadow-sm hover:shadow-md transition-all">
-                <item.icon className="w-10 h-10 text-indigo-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                <p className="text-white/40 text-sm">{item.description}</p>
+              <div key={idx} className="text-center p-6 rounded-2xl border border-white/40 bg-white/90 shadow-sm hover:shadow-md transition-all">
+                <item.icon className="w-10 h-10 text-[#0A7FD1] mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-[#0B1440] mb-2">{item.title}</h3>
+                <p className="text-[#0B1440]/60 text-sm">{item.description}</p>
               </div>
             ))}
           </div>
@@ -273,14 +292,14 @@ export default function AIServicesPage() {
       </section>
 
       {/* PROCESS SECTION */}
-      <section className="py-28 px-6 bg-white/5">
+      <section className="py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="w-16 h-[2px] bg-[#03005F] mx-auto mb-5" />
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-              Our <span className="text-indigo-400">Process</span>
+            <div className="w-16 h-[2px] bg-[#0B1440] mx-auto mb-5" />
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-[#0B1440]">
+              Our <span className="text-[#0A7FD1]">Process</span>
             </h2>
-            <p className="text-white/40 mt-4 max-w-2xl mx-auto">
+            <p className="text-[#0B1440]/60 mt-4 max-w-2xl mx-auto">
               A proven methodology for successful AI implementation
             </p>
           </div>
@@ -293,11 +312,11 @@ export default function AIServicesPage() {
               { step: "04", title: "Deployment", description: "We launch and provide ongoing support" }
             ].map((item, idx) => (
               <div key={idx} className="relative text-center">
-                <div className="text-5xl font-bold text-indigo-400/20 mb-3">{item.step}</div>
-                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                <p className="text-white/40 text-sm">{item.description}</p>
+                <div className="text-5xl font-bold text-[#0A7FD1]/20 mb-3">{item.step}</div>
+                <h3 className="text-xl font-semibold text-[#0B1440] mb-2">{item.title}</h3>
+                <p className="text-[#0B1440]/60 text-sm">{item.description}</p>
                 {idx < 3 && (
-                  <div className="hidden md:block absolute top-1/3 -right-3 text-indigo-400/20">
+                  <div className="hidden md:block absolute top-1/3 -right-3 text-[#0A7FD1]/20">
                     <ArrowRight className="w-6 h-6" />
                   </div>
                 )}
@@ -308,33 +327,36 @@ export default function AIServicesPage() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-28 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#03005F]/10 via-indigo-500/10 to-purple-500/10" />
-        
+      <section className="py-28 px-6 relative overflow-hidden bg-gradient-to-r from-[#0B1440] via-[#16255C] to-[#0B1440]">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#22B4F5]/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-[#78E1FF]/15 rounded-full blur-3xl" />
+        </div>
+
         <div className="relative max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-white/50 mb-10">
+          <p className="text-xl text-white/60 mb-10">
             Let's discuss how AI can help you automate, scale, and grow.
             Book your free consultation today.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               onClick={handleConsultation}
               size="lg"
-              className="bg-[#03005F] hover:bg-[#03005F]/90 text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-[#03005F]/25"
+              className="bg-gradient-to-r from-[#22B4F5] via-[#0D96E8] to-[#0A7FD1] hover:shadow-2xl hover:shadow-[#22B4F5]/40 text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-[#0A7FD1]/25"
             >
               <Sparkles className="w-5 h-5 mr-2" />
               Book Free Consultation
             </Button>
-            
-            <Button 
+
+            <Button
               asChild
               variant="outline"
               size="lg"
-              className="border-white/20 text-white/70 hover:bg-white/10 px-8 py-6 text-lg rounded-full"
+              className="border-white/25 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full"
             >
               <Link href="/ai/ai-courses">
                 Browse AI Courses
@@ -342,8 +364,8 @@ export default function AIServicesPage() {
               </Link>
             </Button>
           </div>
-          
-          <p className="text-white/40 text-sm mt-8">
+
+          <p className="text-white/50 text-sm mt-8">
             💬 Or WhatsApp us directly at +234 916 105 2706
           </p>
         </div>

@@ -17,28 +17,28 @@ export default function TechAcademyPage() {
     <div className="min-h-screen">
       <Navigation />
 
-      <section className="bg-primary text-primary-foreground py-20">
+      <section className="bg-gradient-to-b from-[#4FD2FF] via-[#22B4F5] to-[#0A7FD1] text-[#0B1440] py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-primary/20 text-primary-foreground border-0">
+            <Badge className="mb-6 bg-[#0B1440]/90 text-white border-0">
               Tech Academy
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#0B1440]">
               Tech Academy — Bootcamps & Courses
             </h1>
-            <p className="text-lg text-primary-foreground/90 mb-6">
+            <p className="text-lg text-[#0B1440]/75 mb-6">
               Hands-on cohorts and self-paced courses that prepare you for
               engineering and AI careers — real projects, mentorship, and
               job-readiness.
             </p>
 
             <div className="flex justify-center gap-4">
-              <Button asChild className="bg-primary text-primary-foreground">
+              <Button asChild className="bg-[#0B1440] text-white hover:bg-[#0B1440]/90">
                 <Link href="/courses">View Courses</Link>
               </Button>
               <Button
                 asChild
-                className="border border-primary text-primary bg-transparent"
+                className="border border-[#0B1440]/30 text-[#0B1440] bg-white/70 hover:bg-white"
               >
                 <Link href="/contact">Contact Admissions</Link>
               </Button>
@@ -80,11 +80,11 @@ export default function TechAcademyPage() {
               a capstone project, and continuous mentorship.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-6 bg-white/5 rounded-lg">Mentored learning</div>
-              <div className="p-6 bg-white/5 rounded-lg">
+              <div className="p-6 bg-[#0B1440]/5 border border-[#0B1440]/10 rounded-lg text-[#0B1440] font-medium">Mentored learning</div>
+              <div className="p-6 bg-[#0B1440]/5 border border-[#0B1440]/10 rounded-lg text-[#0B1440] font-medium">
                 Practical projects
               </div>
-              <div className="p-6 bg-white/5 rounded-lg">Job-readiness</div>
+              <div className="p-6 bg-[#0B1440]/5 border border-[#0B1440]/10 rounded-lg text-[#0B1440] font-medium">Job-readiness</div>
             </div>
           </div>
         </div>
