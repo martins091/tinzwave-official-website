@@ -19,8 +19,12 @@ import {
   Sparkles,
   ChevronRight,
   Zap,
+  Mail,
+  Linkedin,
+  ArrowRight,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import { founder, contactLinks } from "@/lib/martins-data";
 
 export default function AboutPage() {
   const values = [
@@ -73,7 +77,7 @@ export default function AboutPage() {
       name: "Emeka (Jude) Okonkwo",
       title: "Lead Digital Marketing",
       bio: "Digital marketing strategist growing Tinzwave's presence and impact",
-      image: "/team-ihionkhan.jpg",
+      image: "/team-emekaa.jpg",
     },
     {
       name: "Habeeb Oluwanishola",
@@ -139,61 +143,77 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ========== STORY + IMAGE - Clean Split ========== */}
+      {/* ========== FOUNDER'S STORY + IMAGE - Clean Split ========== */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <Reveal>
               <div>
                 <Badge className="mb-4 px-4 py-1.5 border border-[#0B1440]/15 bg-[#0B1440]/5 text-[#0B1440]/70 font-mono text-xs tracking-widest">
-                  OUR JOURNEY
+                  MEET OUR FOUNDER
                 </Badge>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#0B1440]">
-                  Building Africa's Digital Future
+                <h2 className="text-3xl md:text-4xl font-bold mb-2 text-[#0B1440]">
+                  From Security Guard to Software Founder
                 </h2>
+                <p className="text-sm font-semibold text-[#0A7FD1] mb-6">
+                  {founder.name} — {founder.title}
+                </p>
                 <div className="space-y-4 text-[#0B1440]/65 leading-relaxed">
-                  <p>
-                    Tinzwave was founded with a clear vision: to bridge the
-                    digital divide in Africa by providing world-class technology
-                    solutions and training. We recognized that African businesses,
-                    institutions, and individuals needed access to modern
-                    technology and the skills to use it effectively.
-                  </p>
-                  <p>
-                    What started as a small software development company has grown
-                    into a comprehensive technology partner for organizations
-                    across Africa. We now offer AI-powered software development,
-                    web and mobile development, digital marketing services, and a
-                    robust tech academy that has trained thousands of students.
-                  </p>
-                  <p>
-                    Today, Tinzwave serves businesses, schools, churches, and
-                    individuals, helping them leverage technology to achieve their
-                    goals. We're not just building software—we're building
-                    capacity, creating opportunities, and transforming lives
-                    through technology.
-                  </p>
+                  {founder.story.map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
+                  ))}
+                </div>
+
+                {/* Connect links */}
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <Link
+                    href="/martins"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0B1440] text-white text-sm font-semibold hover:bg-[#0B1440]/90 transition"
+                  >
+                    View full profile
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  {contactLinks
+                    .filter((l) => l.id === "email" || l.id === "linkedin")
+                    .map((link) => {
+                      const Icon = link.id === "email" ? Mail : Linkedin;
+                      return (
+                        link.href && (
+                          <a
+                            key={link.id}
+                            href={link.href}
+                            target={link.id === "linkedin" ? "_blank" : undefined}
+                            rel={link.id === "linkedin" ? "noopener noreferrer" : undefined}
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#0B1440]/15 text-[#0B1440] text-sm font-medium hover:bg-[#0B1440]/5 transition"
+                          >
+                            <Icon className="w-4 h-4" />
+                            {link.label}
+                          </a>
+                        )
+                      );
+                    })}
                 </div>
               </div>
             </Reveal>
 
             <Reveal>
-              <div className="relative h-[500px] rounded-2xl overflow-hidden border border-[#0B1440]/10 shadow-2xl shadow-[#0B1440]/20">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1440]/70 via-transparent to-transparent z-10" />
-                <Image
-                  src="/group.jpeg"
-                  alt="Tinzwave Team"
-                  fill
-                  className="object-cover hover:scale-105 transition duration-700"
-                />
+              <div className="relative rounded-2xl overflow-hidden border border-[#0B1440]/10 bg-white shadow-2xl shadow-[#0B1440]/20">
+                <div className="relative w-full aspect-[3/4]">
+                  <Image
+                    src="/team-agbo-martins.jpg"
+                    alt={founder.name}
+                    fill
+                    className="object-contain object-center hover:scale-105 transition duration-700"
+                  />
+                </div>
                 <div className="absolute bottom-6 left-6 z-20">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-[#0B1440]/80 backdrop-blur-xl text-xs text-white/80 font-mono">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-[#0B1440]/85 backdrop-blur-xl text-xs text-white/90 font-mono">
                     <Sparkles className="w-3 h-3" />
-                    TinzWave Team 2026
+                    {founder.name}
                   </div>
                 </div>
-                <div className="absolute top-4 right-4 z-20 w-16 h-16 border-t-2 border-r-2 border-white/30" />
-                <div className="absolute bottom-4 left-4 z-20 w-16 h-16 border-b-2 border-l-2 border-white/30" />
+                <div className="absolute top-4 right-4 z-20 w-16 h-16 border-t-2 border-r-2 border-[#0B1440]/20 pointer-events-none" />
+                <div className="absolute bottom-4 left-4 z-20 w-16 h-16 border-b-2 border-l-2 border-[#0B1440]/20 pointer-events-none" />
               </div>
             </Reveal>
           </div>
@@ -306,12 +326,12 @@ export default function AboutPage() {
             {teamMembers.map((member, index) => (
               <Reveal key={index}>
                 <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#0B1440]/20">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-[#0B1440]/20 to-indigo-500/20">
+                  <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-[#0B1440]/20 to-indigo-500/20">
                     <Image
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
                       fill
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#080F30]/85 via-transparent to-transparent" />
                   </div>
