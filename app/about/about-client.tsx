@@ -159,9 +159,8 @@ export default function AboutPage() {
                   {founder.name} — {founder.title}
                 </p>
                 <div className="space-y-4 text-[#0B1440]/65 leading-relaxed">
-                  {founder.story.map((paragraph, idx) => (
-                    <p key={idx}>{paragraph}</p>
-                  ))}
+                  <p>{founder.story.lede}</p>
+                  <p>{founder.story.today}</p>
                 </div>
 
                 {/* Connect links */}

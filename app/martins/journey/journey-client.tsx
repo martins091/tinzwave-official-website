@@ -25,7 +25,9 @@ export default function JourneyPage() {
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold text-[#0B1440]">Training Journey</h1>
           <p className="mt-4 text-lg text-[#0B1440]/70 max-w-2xl">
-            The cohorts, students, and outcomes behind Tinzwave AI Academy —
+            The cohorts, students, and outcomes from everywhere I&apos;ve
+            trained developers and AI engineers — Tinzwave AI Academy, partner
+            tech academies, and a training partnership with local government —
             organized by year.
           </p>
 

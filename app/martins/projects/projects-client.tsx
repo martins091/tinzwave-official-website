@@ -6,7 +6,7 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import Reveal from "@/components/Reveal";
 import { ArrowLeft, ArrowRight, ImageIcon, Star } from "lucide-react";
-import { projects } from "@/lib/martins-data";
+import { projects, otherClientWorkNote } from "@/lib/martins-data";
 
 export default function ProjectsPage() {
   const flagship = projects.find((p) => p.flagship);
@@ -37,54 +37,82 @@ export default function ProjectsPage() {
       {/* ========== FLAGSHIP PROJECT ========== */}
       {flagship && (
         <section className="py-16 px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Reveal>
-              <div className="rounded-3xl border border-[#0B1440]/10 bg-gradient-to-br from-[#0B1440] to-[#080F30] overflow-hidden shadow-2xl shadow-[#080F30]/20">
-                <div className="p-8 md:p-12">
-                  <span className="inline-flex items-center gap-1.5 mb-5 px-3 py-1 rounded-full bg-[#78E1FF]/15 text-[#78E1FF] text-[10px] font-mono tracking-wider border border-[#78E1FF]/30">
-                    <Star className="w-3 h-3 fill-current" />
-                    FLAGSHIP PROJECT
-                  </span>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                    {flagship.name}
-                  </h2>
-                  <p className="text-white/70 leading-relaxed max-w-2xl">
-                    {flagship.description}
-                  </p>
+              <div className="relative rounded-3xl border border-[#0B1440]/10 bg-gradient-to-br from-[#0B1440] to-[#080F30] overflow-hidden shadow-2xl shadow-[#080F30]/20">
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute -top-24 -left-24 w-72 h-72 bg-[#22B4F5]/20 rounded-full blur-3xl" />
+                  <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#78E1FF]/10 rounded-full blur-3xl" />
+                </div>
 
-                  {flagship.role && (
-                    <p className="mt-4 text-sm text-white/50">
-                      Role: <span className="text-white/80 font-medium">{flagship.role}</span>
+                <div className="relative grid lg:grid-cols-2 items-center">
+                  <div className="p-8 md:p-12">
+                    <span className="inline-flex items-center gap-1.5 mb-5 px-3 py-1 rounded-full bg-[#78E1FF]/15 text-[#78E1FF] text-[10px] font-mono tracking-wider border border-[#78E1FF]/30">
+                      <Star className="w-3 h-3 fill-current" />
+                      FLAGSHIP PROJECT
+                    </span>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                      {flagship.name}
+                    </h2>
+                    <p className="text-white/70 leading-relaxed max-w-2xl">
+                      {flagship.description}
                     </p>
-                  )}
 
-                  {flagship.stats && flagship.stats.some((s) => s.value) ? (
-                    <div className="mt-6 flex flex-wrap gap-6">
-                      {flagship.stats
-                        .filter((s) => s.value)
-                        .map((stat) => (
-                          <div key={stat.label}>
-                            <p className="text-2xl font-bold text-white">{stat.value}</p>
-                            <p className="text-xs text-white/50 mt-0.5">{stat.label}</p>
-                          </div>
-                        ))}
+                    {flagship.role && (
+                      <p className="mt-4 text-sm text-white/50">
+                        Role: <span className="text-white/80 font-medium">{flagship.role}</span>
+                      </p>
+                    )}
+
+                    {flagship.stats && flagship.stats.some((s) => s.value) ? (
+                      <div className="mt-6 flex flex-wrap gap-6">
+                        {flagship.stats
+                          .filter((s) => s.value)
+                          .map((stat) => (
+                            <div key={stat.label}>
+                              <p className="text-2xl font-bold text-white">{stat.value}</p>
+                              <p className="text-xs text-white/50 mt-0.5">{stat.label}</p>
+                            </div>
+                          ))}
+                      </div>
+                    ) : (
+                      <p className="mt-6 text-sm text-white/40 italic">
+                        Live usage stats coming soon.
+                      </p>
+                    )}
+
+                    {flagship.liveUrl && (
+                      <a
+                        href={flagship.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#22B4F5] to-[#0A7FD1] text-white text-sm font-semibold hover:shadow-lg hover:shadow-[#22B4F5]/30 transition"
+                      >
+                        Visit interviewai.tinzwave.com
+                        <ArrowRight className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
+
+                  {flagship.image && (
+                    <div className="p-8 pt-0 lg:pt-8 md:px-12 lg:pl-0">
+                      <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40">
+                        <div className="flex items-center gap-1.5 px-4 py-3 bg-white/5 border-b border-white/10">
+                          <span className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/70" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-green-400/70" />
+                        </div>
+                        <div className="relative aspect-video bg-[#080F30]">
+                          <Image
+                            src={flagship.image}
+                            alt={`${flagship.name} screenshot`}
+                            fill
+                            sizes="(min-width: 1024px) 560px, 90vw"
+                            className="object-cover object-top"
+                          />
+                        </div>
+                      </div>
                     </div>
-                  ) : (
-                    <p className="mt-6 text-sm text-white/40 italic">
-                      Live usage stats coming soon.
-                    </p>
-                  )}
-
-                  {flagship.liveUrl && (
-                    <a
-                      href={flagship.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#22B4F5] to-[#0A7FD1] text-white text-sm font-semibold hover:shadow-lg hover:shadow-[#22B4F5]/30 transition"
-                    >
-                      Visit interviewai.tinzwave.com
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
                   )}
                 </div>
               </div>
@@ -96,22 +124,27 @@ export default function ProjectsPage() {
       {/* ========== OTHER PROJECTS GRID ========== */}
       {rest.length > 0 && (
         <section className="py-8 px-6 pb-24">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Reveal>
-              <h2 className="text-2xl font-bold text-[#0B1440] mb-8">More Work</h2>
+              <h2 className="text-2xl font-bold text-[#0B1440] mb-2">More Work</h2>
+              <p className="text-[#0B1440]/60 mb-8 max-w-2xl">
+                Real, live products built for clients across gaming, agritech,
+                fashion, beauty, and real estate.
+              </p>
             </Reveal>
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {rest.map((project) => (
                 <Reveal key={project.id}>
-                  <div className="h-full rounded-2xl border border-[#0B1440]/10 bg-white hover:shadow-xl hover:shadow-[#0A7FD1]/10 transition-all duration-300 overflow-hidden flex flex-col">
+                  <div className="group h-full rounded-2xl border border-[#0B1440]/10 bg-white hover:border-[#0A7FD1]/30 hover:shadow-2xl hover:shadow-[#0A7FD1]/15 hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col">
                     {/* Screenshot / placeholder */}
-                    <div className="relative aspect-video bg-[#EEF5FC] flex items-center justify-center">
+                    <div className="relative aspect-video bg-[#EEF5FC] flex items-center justify-center overflow-hidden">
                       {project.image ? (
                         <Image
                           src={project.image}
                           alt={`${project.name} screenshot`}
                           fill
-                          className="object-cover"
+                          sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
+                          className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         />
                       ) : (
                         <div className="flex flex-col items-center gap-2 text-[#0B1440]/25">
@@ -120,6 +153,12 @@ export default function ProjectsPage() {
                             Screenshot coming soon
                           </span>
                         </div>
+                      )}
+                      {project.liveUrl && (
+                        <span className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#0B1440]/80 backdrop-blur text-white text-[10px] font-mono tracking-wider">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          LIVE
+                        </span>
                       )}
                     </div>
 
@@ -158,7 +197,7 @@ export default function ProjectsPage() {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#0A7FD1] hover:text-[#0B1440] transition"
+                          className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#0A7FD1] hover:text-[#0B1440] transition-all group-hover:gap-3"
                         >
                           Visit live project
                           <ArrowRight className="w-4 h-4" />
@@ -169,6 +208,12 @@ export default function ProjectsPage() {
                 </Reveal>
               ))}
             </div>
+
+            <Reveal>
+              <div className="mt-10 text-center p-8 rounded-2xl border border-dashed border-[#0B1440]/15 bg-[#EEF5FC]">
+                <p className="text-[#0B1440]/70 max-w-xl mx-auto">{otherClientWorkNote}</p>
+              </div>
+            </Reveal>
           </div>
         </section>
       )}
