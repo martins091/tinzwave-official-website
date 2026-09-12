@@ -349,3 +349,12 @@
   animation: bg-slideshow 9s infinite;
   animation-delay: -6s;
 }
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

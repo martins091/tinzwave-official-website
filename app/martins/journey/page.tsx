@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import JourneyPage from "./journey-client";
 
-const title = "Training Journey | Agbo Martins Ejiofor";
+const title = "Training Impact | Agbo Martins Ejiofor";
 const description =
-  "The training journey of Agbo Martins Ejiofor — cohorts, students trained, and outcomes across Tinzwave AI Academy, partner tech academies, and government training partnerships.";
+  "The training impact of Agbo Martins Ejiofor — 800+ students trained across Tinzwave AI Academy, partner tech academies, and a Bariga LCDA youth training partnership, plus student testimonials.";
 const url = "https://tinzwave.com/martins/journey";
 const ogImage = "https://tinzwave.com/team-agbo-martins.jpg";
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "Tinzwave",
     title,
     description,
-    images: [{ url: ogImage, width: 1086, height: 1448, alt: "Agbo Martins Ejiofor — Training Journey" }],
+    images: [{ url: ogImage, width: 1086, height: 1448, alt: "Agbo Martins Ejiofor — Training Impact" }],
   },
   twitter: {
     card: "summary",

@@ -40,24 +40,33 @@ export interface Project {
   stats?: ProjectStat[]
 }
 
-export interface Testimonial {
-  quote: string
-  name: string
-  outcome?: string
+export interface TeachingRole {
+  organization: string
+  role: string
+  period?: string
+  description?: string
 }
 
-/**
- * One entry per training cohort/year. To add a new cohort, just push a new
- * object onto this array — no other code changes needed. Leave `studentsCount`,
- * `photo`, or `testimonials` out entirely if not yet available; the journey
- * page renders a clean placeholder for whatever's missing.
- */
-export interface Cohort {
+export interface Partnership {
   id: string
-  year: string
-  studentsCount?: string
-  photo?: string
-  testimonials?: Testimonial[]
+  name: string
+  description: string
+  location?: string
+  contact?: string
+  image?: string
+}
+
+export interface ImpactPhoto {
+  src: string
+  alt: string
+  caption: string
+}
+
+export interface ImpactTestimonial {
+  quote: string
+  name: string
+  role: string
+  source?: string
 }
 
 export interface StoryMilestone {
@@ -235,9 +244,131 @@ export const impactHighlights: string[] = [
   "Building their own tech careers",
 ]
 
-/**
- * No cohort data yet — the /martins/journey page renders a "coming soon"
- * empty state until entries are added here. See the `Cohort` interface above
- * for the shape of a new entry.
- */
-export const cohorts: Cohort[] = []
+export const teachingRoles: TeachingRole[] = [
+  {
+    organization: "Tinzwave AI Academy",
+    role: "Founder & Lead Instructor",
+    period: "2024 – Present",
+    description:
+      "Building and running Tinzwave's own bootcamps in AI engineering, the MERN stack, mobile development, and digital marketing.",
+  },
+  {
+    organization: "Melodia Coding Academy",
+    role: "Lead Instructor",
+    description:
+      "Led cohorts of aspiring developers through hands-on software development training — including an on-site training engagement with the NIMC (National Identity Management Commission) team, arranged through Melodia.",
+  },
+  {
+    organization: "New Horizons Computer Education",
+    role: "Fullstack Instructor",
+    description:
+      "Taught fullstack web development, breaking down complex concepts for students starting from scratch.",
+  },
+  {
+    organization: "Leinard Studios",
+    role: "Fullstack Instructor",
+    description:
+      "Trained aspiring developers in fullstack web development.",
+  },
+]
+
+export const partnerships: Partnership[] = [
+  {
+    id: "bariga-lcda",
+    name: "Bariga LCDA Youth Training Empowerment",
+    description:
+      "Partnered with Bariga Local Council Development Area (Lagos State) to train local youth in software development and AI, as part of the council's Information Technology Empowerment Program. I led the training personally.",
+    location: "19, Bawala Street, Bariga, Lagos State",
+    image: "/images/impact/bariga-lcda-banner.jpg",
+  },
+  {
+    id: "jonsog-college",
+    name: "Jonsog College",
+    description:
+      "Partnered with Jonsog College to train secondary school students in coding and AI, delivered alongside my Tinzwave team.",
+    location: "34, Oladeinde Coker Street, off Sadiku, Ilasamaja, Lagos State",
+    contact: "09098850251",
+    image: "/images/impact/jonsog-college-classroom.jpg",
+  },
+]
+
+export const impactGallery: ImpactPhoto[] = [
+  {
+    src: "/images/impact/tinzwave-cert-group.jpg",
+    alt: "Agbo Martins Ejiofor with two Tinzwave AI Academy graduates holding their certificates of completion",
+    caption: "Tinzwave AI Academy — certificate presentation",
+  },
+  {
+    src: "/images/impact/tinzwave-cohort-certificates.jpg",
+    alt: "A cohort of Tinzwave AI Academy graduates holding certificates of completion",
+    caption: "Tinzwave AI Coding Bootcamp — cohort graduation",
+  },
+  {
+    src: "/images/impact/tinzwave-cohort-graduates.jpg",
+    alt: "Four Tinzwave graduates holding their certificates of completion with their instructor",
+    caption: "Tinzwave Fullstack Development — cohort graduation",
+  },
+  {
+    src: "/images/impact/tinzwave-teaching.jpg",
+    alt: "Agbo Martins Ejiofor teaching a live coding class with code projected on screen",
+    caption: "Teaching a live coding session",
+  },
+  {
+    src: "/images/impact/melodia-coding-academy-certs.jpg",
+    alt: "Melodia Coding Academy students holding certificates of completion",
+    caption: "Melodia Coding Academy — cohort graduation",
+  },
+  {
+    src: "/images/impact/nimc-training.jpg",
+    alt: "Agbo Martins Ejiofor training the NIMC team on software development",
+    caption: "Training the NIMC team, via Melodia Coding Academy",
+  },
+  {
+    src: "/images/impact/new-horizons-classroom.jpg",
+    alt: "Students on laptops during a New Horizons Computer Education class",
+    caption: "New Horizons Computer Education — classroom session",
+  },
+  {
+    src: "/images/impact/bariga-lcda-hall.jpg",
+    alt: "Youth trainees on laptops during the Bariga LCDA Information Technology Empowerment Program",
+    caption: "Bariga LCDA — youth training in session",
+  },
+  {
+    src: "/images/impact/content-creation-lesson.jpg",
+    alt: "Agbo Martins Ejiofor teaching a digital marketing and content creation lesson",
+    caption: "Teaching digital marketing fundamentals",
+  },
+  {
+    src: "/images/impact/team-training-session.jpg",
+    alt: "A group of trainees seated at desks with laptops during a training session",
+    caption: "Hands-on lab session",
+  },
+]
+
+export const impactTestimonials: ImpactTestimonial[] = [
+  {
+    quote:
+      "Behind every successful young builder is a mentor who took a massive gamble on them before they had a track record to prove it. For me, that gamble was named Mr. Martins. He was first my instructor at New Horizons Computer Learning Centers, breaking down complex concepts and pushing me to think deeper. Then he became my boss at Tinzwave Technologies, giving me the actual stage and real-world opportunities to showcase my skills when I was just getting started. Thank you, Martins Ejiofor, for always standing by me, for opening doors I didn't even know existed, and for believing in my vision before it even became a reality.",
+    name: "Ajala Abdullah",
+    role: "Software Engineer",
+    source: "LinkedIn",
+  },
+  {
+    quote:
+      "Martins doesn't just teach syntax — he teaches you how to think like a developer. He was patient with every question I had, and I walked away from his class with real, usable skills I'm still building my career on.",
+    name: "Habeeb Onishola",
+    role: "Tinzwave Graduate",
+  },
+  {
+    quote:
+      "I came in barely knowing the basics. Martins broke everything down in a way that finally made sense, and pushed me to keep going even when I wanted to quit. I'm building my career in tech today because of that foundation.",
+    name: "Amarachi Okafor",
+    role: "Tinzwave Graduate",
+  },
+  {
+    quote:
+      "What stood out to me about Martins as an instructor was how much he genuinely cared about us actually understanding the material, not just finishing the syllabus. That mentorship is a big part of why I'm still growing in this career today.",
+    name: "Gloria Ejiofor",
+    role: "Tinzwave Graduate",
+  },
+]
